@@ -1,0 +1,6 @@
+framework module Pods_Road_Trip_RadarTests {
+  umbrella header "Pods-Road Trip RadarTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

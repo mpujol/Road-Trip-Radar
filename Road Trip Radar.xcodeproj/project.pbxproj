@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		167417CDC6E50F176DAE342E /* Pods_Road_Trip_RadarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B6385C59D0BFC942B8917C /* Pods_Road_Trip_RadarUITests.framework */; };
+		823A09088FF140FDCC25530C /* Pods_Road_Trip_Radar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371C3740F53C5E1C33ECFBA1 /* Pods_Road_Trip_Radar.framework */; };
 		BC3205FD1D3063F7007D3E1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3205FC1D3063F7007D3E1B /* AppDelegate.swift */; };
 		BC3205FF1D3063F7007D3E1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3205FE1D3063F7007D3E1B /* ViewController.swift */; };
 		BC3206021D3063F7007D3E1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC3206001D3063F7007D3E1B /* Main.storyboard */; };
@@ -14,6 +16,8 @@
 		BC3206071D3063F7007D3E1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC3206051D3063F7007D3E1B /* LaunchScreen.storyboard */; };
 		BC3206121D3063F7007D3E1B /* Road_Trip_RadarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3206111D3063F7007D3E1B /* Road_Trip_RadarTests.swift */; };
 		BC32061D1D3063F7007D3E1B /* Road_Trip_RadarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC32061C1D3063F7007D3E1B /* Road_Trip_RadarUITests.swift */; };
+		BC32062B1D306BE5007D3E1B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC32062A1D306BE5007D3E1B /* GoogleService-Info.plist */; };
+		EC7FF0FF196512973C01F8CF /* Pods_Road_Trip_RadarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48F02FE7F627E1621ED361D /* Pods_Road_Trip_RadarTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08B6385C59D0BFC942B8917C /* Pods_Road_Trip_RadarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Road_Trip_RadarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A62E72302FE97211BD6748E /* Pods-Road Trip RadarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Road Trip RadarUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Road Trip RadarUITests/Pods-Road Trip RadarUITests.release.xcconfig"; sourceTree = "<group>"; };
+		371C3740F53C5E1C33ECFBA1 /* Pods_Road_Trip_Radar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Road_Trip_Radar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AAA496C90B03E893DD4708F /* Pods-Road Trip Radar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Road Trip Radar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Road Trip Radar/Pods-Road Trip Radar.release.xcconfig"; sourceTree = "<group>"; };
+		90311ACAA44496CB028F3D78 /* Pods-Road Trip Radar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Road Trip Radar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Road Trip Radar/Pods-Road Trip Radar.debug.xcconfig"; sourceTree = "<group>"; };
+		AF7596C3F9EDAA2A429B84E1 /* Pods-Road Trip RadarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Road Trip RadarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Road Trip RadarTests/Pods-Road Trip RadarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC3205F91D3063F7007D3E1B /* Road Trip Radar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Road Trip Radar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3205FC1D3063F7007D3E1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC3205FE1D3063F7007D3E1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +57,10 @@
 		BC3206181D3063F7007D3E1B /* Road Trip RadarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Road Trip RadarUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC32061C1D3063F7007D3E1B /* Road_Trip_RadarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Road_Trip_RadarUITests.swift; sourceTree = "<group>"; };
 		BC32061E1D3063F7007D3E1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC32062A1D306BE5007D3E1B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C2C3FEECB5F990E83E2E6AD6 /* Pods-Road Trip RadarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Road Trip RadarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Road Trip RadarTests/Pods-Road Trip RadarTests.release.xcconfig"; sourceTree = "<group>"; };
+		F1C6A35E5CA636B67CE9340E /* Pods-Road Trip RadarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Road Trip RadarUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Road Trip RadarUITests/Pods-Road Trip RadarUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F48F02FE7F627E1621ED361D /* Pods_Road_Trip_RadarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Road_Trip_RadarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				823A09088FF140FDCC25530C /* Pods_Road_Trip_Radar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC7FF0FF196512973C01F8CF /* Pods_Road_Trip_RadarTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +84,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				167417CDC6E50F176DAE342E /* Pods_Road_Trip_RadarUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68539C2AE0EF86E33219A8C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90311ACAA44496CB028F3D78 /* Pods-Road Trip Radar.debug.xcconfig */,
+				4AAA496C90B03E893DD4708F /* Pods-Road Trip Radar.release.xcconfig */,
+				AF7596C3F9EDAA2A429B84E1 /* Pods-Road Trip RadarTests.debug.xcconfig */,
+				C2C3FEECB5F990E83E2E6AD6 /* Pods-Road Trip RadarTests.release.xcconfig */,
+				F1C6A35E5CA636B67CE9340E /* Pods-Road Trip RadarUITests.debug.xcconfig */,
+				0A62E72302FE97211BD6748E /* Pods-Road Trip RadarUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		972829594196ADCC606F0D68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				371C3740F53C5E1C33ECFBA1 /* Pods_Road_Trip_Radar.framework */,
+				F48F02FE7F627E1621ED361D /* Pods_Road_Trip_RadarTests.framework */,
+				08B6385C59D0BFC942B8917C /* Pods_Road_Trip_RadarUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BC3205F01D3063F7007D3E1B = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +121,8 @@
 				BC3206101D3063F7007D3E1B /* Road Trip RadarTests */,
 				BC32061B1D3063F7007D3E1B /* Road Trip RadarUITests */,
 				BC3205FA1D3063F7007D3E1B /* Products */,
+				68539C2AE0EF86E33219A8C3 /* Pods */,
+				972829594196ADCC606F0D68 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +145,7 @@
 				BC3206031D3063F7007D3E1B /* Assets.xcassets */,
 				BC3206051D3063F7007D3E1B /* LaunchScreen.storyboard */,
 				BC3206081D3063F7007D3E1B /* Info.plist */,
+				BC32062A1D306BE5007D3E1B /* GoogleService-Info.plist */,
 			);
 			path = "Road Trip Radar";
 			sourceTree = "<group>";
@@ -132,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC3206211D3063F7007D3E1B /* Build configuration list for PBXNativeTarget "Road Trip Radar" */;
 			buildPhases = (
+				D883C654ED3133DF7C064AAF /* [CP] Check Pods Manifest.lock */,
 				BC3205F51D3063F7007D3E1B /* Sources */,
 				BC3205F61D3063F7007D3E1B /* Frameworks */,
 				BC3205F71D3063F7007D3E1B /* Resources */,
+				943A71DE992E7D1CB9758636 /* [CP] Embed Pods Frameworks */,
+				CC849361EACC6A4F58911AB2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC3206241D3063F7007D3E1B /* Build configuration list for PBXNativeTarget "Road Trip RadarTests" */;
 			buildPhases = (
+				4A368744D612587FF01D9523 /* [CP] Check Pods Manifest.lock */,
 				BC3206091D3063F7007D3E1B /* Sources */,
 				BC32060A1D3063F7007D3E1B /* Frameworks */,
 				BC32060B1D3063F7007D3E1B /* Resources */,
+				EC6E266C4C70AA7C8C632EE5 /* [CP] Embed Pods Frameworks */,
+				73BB9591D5705D50D6FA005B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC3206271D3063F7007D3E1B /* Build configuration list for PBXNativeTarget "Road Trip RadarUITests" */;
 			buildPhases = (
+				6ABB40DA342E0E2D5CAB8B5A /* [CP] Check Pods Manifest.lock */,
 				BC3206141D3063F7007D3E1B /* Sources */,
 				BC3206151D3063F7007D3E1B /* Frameworks */,
 				BC3206161D3063F7007D3E1B /* Resources */,
+				9058CD9CC3B4B8F644007627 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,6 +244,7 @@
 				TargetAttributes = {
 					BC3205F81D3063F7007D3E1B = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 2BPJV79PL6;
 					};
 					BC32060C1D3063F7007D3E1B = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -230,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC3206071D3063F7007D3E1B /* LaunchScreen.storyboard in Resources */,
+				BC32062B1D306BE5007D3E1B /* GoogleService-Info.plist in Resources */,
 				BC3206041D3063F7007D3E1B /* Assets.xcassets in Resources */,
 				BC3206021D3063F7007D3E1B /* Main.storyboard in Resources */,
 			);
@@ -250,6 +303,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A368744D612587FF01D9523 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6ABB40DA342E0E2D5CAB8B5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		73BB9591D5705D50D6FA005B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Road Trip RadarTests/Pods-Road Trip RadarTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9058CD9CC3B4B8F644007627 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Road Trip RadarUITests/Pods-Road Trip RadarUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		943A71DE992E7D1CB9758636 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Road Trip Radar/Pods-Road Trip Radar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC849361EACC6A4F58911AB2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Road Trip Radar/Pods-Road Trip Radar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D883C654ED3133DF7C064AAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EC6E266C4C70AA7C8C632EE5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Road Trip RadarTests/Pods-Road Trip RadarTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BC3205F51D3063F7007D3E1B /* Sources */ = {
@@ -397,8 +573,10 @@
 		};
 		BC3206221D3063F7007D3E1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90311ACAA44496CB028F3D78 /* Pods-Road Trip Radar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Road Trip Radar/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mike.pujol.Road-Trip-Radar";
@@ -408,8 +586,10 @@
 		};
 		BC3206231D3063F7007D3E1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AAA496C90B03E893DD4708F /* Pods-Road Trip Radar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Road Trip Radar/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mike.pujol.Road-Trip-Radar";
@@ -419,6 +599,7 @@
 		};
 		BC3206251D3063F7007D3E1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF7596C3F9EDAA2A429B84E1 /* Pods-Road Trip RadarTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Road Trip RadarTests/Info.plist";
@@ -431,6 +612,7 @@
 		};
 		BC3206261D3063F7007D3E1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2C3FEECB5F990E83E2E6AD6 /* Pods-Road Trip RadarTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Road Trip RadarTests/Info.plist";
@@ -443,6 +625,7 @@
 		};
 		BC3206281D3063F7007D3E1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1C6A35E5CA636B67CE9340E /* Pods-Road Trip RadarUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Road Trip RadarUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -454,6 +637,7 @@
 		};
 		BC3206291D3063F7007D3E1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A62E72302FE97211BD6748E /* Pods-Road Trip RadarUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Road Trip RadarUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -482,6 +666,7 @@
 				BC3206231D3063F7007D3E1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC3206241D3063F7007D3E1B /* Build configuration list for PBXNativeTarget "Road Trip RadarTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +675,7 @@
 				BC3206261D3063F7007D3E1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC3206271D3063F7007D3E1B /* Build configuration list for PBXNativeTarget "Road Trip RadarUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +684,7 @@
 				BC3206291D3063F7007D3E1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
