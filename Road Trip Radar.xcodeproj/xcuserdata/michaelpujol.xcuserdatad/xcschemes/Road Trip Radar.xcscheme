@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BC3205F81D3063F7007D3E1B"
+               BuildableName = "Road Trip Radar.app"
+               BlueprintName = "Road Trip Radar"
+               ReferencedContainer = "container:Road Trip Radar.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BC32060C1D3063F7007D3E1B"
+               BuildableName = "Road Trip RadarTests.xctest"
+               BlueprintName = "Road Trip RadarTests"
+               ReferencedContainer = "container:Road Trip Radar.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BC3206171D3063F7007D3E1B"
+               BuildableName = "Road Trip RadarUITests.xctest"
+               BlueprintName = "Road Trip RadarUITests"
+               ReferencedContainer = "container:Road Trip Radar.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "BC3205F81D3063F7007D3E1B"
+            BuildableName = "Road Trip Radar.app"
+            BlueprintName = "Road Trip Radar"
+            ReferencedContainer = "container:Road Trip Radar.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "BC3205F81D3063F7007D3E1B"
+            BuildableName = "Road Trip Radar.app"
+            BlueprintName = "Road Trip Radar"
+            ReferencedContainer = "container:Road Trip Radar.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "BC3205F81D3063F7007D3E1B"
+            BuildableName = "Road Trip Radar.app"
+            BlueprintName = "Road Trip Radar"
+            ReferencedContainer = "container:Road Trip Radar.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
