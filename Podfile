@@ -8,6 +8,7 @@ target 'Road Trip Radar' do
   # Pods for Road Trip Radar
 
 pod 'Firebase'
+pod 'Firebase/Auth'
 
   target 'Road Trip RadarTests' do
     inherit! :search_paths
