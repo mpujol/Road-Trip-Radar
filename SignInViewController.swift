@@ -72,6 +72,8 @@ class SignInViewController: UIViewController {
             if let error = error {
                 print(error.localizedDescription)
                 
+                self.signInActivityIndicator.stopAnimating()
+                
                 return
             }
             //Set the display name
