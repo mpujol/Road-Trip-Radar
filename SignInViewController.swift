@@ -76,7 +76,7 @@ class SignInViewController: UIViewController {
                 case 17009 : // incorrect password with a valid email
                     print("You kinda miss-typed your password bruh")
                     
-                    let incorrectPasswordAlertController = UIAlertController(title: "Incorrect Paswsowrd", message: "The passowrd you have entered is incorrect", preferredStyle: .Alert)
+                    let incorrectPasswordAlertController = UIAlertController(title: "Incorrect Password", message: "The password you have entered is incorrect", preferredStyle: .Alert)
                     let firstAlertAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
                     
                     incorrectPasswordAlertController.addAction(firstAlertAction)
@@ -86,6 +86,21 @@ class SignInViewController: UIViewController {
                             self.passwordTextField.text = ""
                         })
                     })
+                    
+                case 17011 : // incorrect email address
+                    print("You kinda miss-typed your password bruh")
+                    
+                    let incorrectPasswordAlertController = UIAlertController(title: "Invalid Email Address", message: "The email you have entered is not valid", preferredStyle: .Alert)
+                    let firstAlertAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+                    
+                    incorrectPasswordAlertController.addAction(firstAlertAction)
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.presentViewController(incorrectPasswordAlertController, animated: true, completion: {
+                            self.passwordTextField.text = ""
+                        })
+                    })
+
     
                 default:
                     break
