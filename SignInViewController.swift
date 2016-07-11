@@ -70,7 +70,29 @@ class SignInViewController: UIViewController {
         
         FIRAuth.auth()?.signInWithEmail(email!, password: password!, completion: { (user, error) in
             if let error = error {
+                
+                
+                switch error.code {
+                case 17009 : // incorrect password with a valid email
+                    print("You kinda miss-typed your password bruh")
+                    
+                    let incorrectPasswordAlertController = UIAlertController(title: "Incorrect Paswsowrd", message: "The passowrd you have entered is incorrect", preferredStyle: .Alert)
+                    let firstAlertAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+                    
+                    incorrectPasswordAlertController.addAction(firstAlertAction)
+                    
+                    dispatch_async(dispatch_get_main_queue(), { 
+                        self.presentViewController(incorrectPasswordAlertController, animated: true, completion: { 
+                            self.passwordTextField.text = ""
+                        })
+                    })
+    
+                default:
+                    break
+                }
+                
                 print(error.localizedDescription)
+                print(error.code)
                 
                 self.signInActivityIndicator.stopAnimating()
                 

@@ -6,10 +6,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Road Trip Radar-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Road_Trip_Radar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignInViewController" customModule="Road_Trip_Radar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,47 +18,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0Md-JL-jSM">
+                                <rect key="frame" x="119" y="8" width="146" height="227"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Road Trip Radar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0SG-k3-mU6">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Let's get going" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0SG-k3-mU6">
+                                        <rect key="frame" x="0.0" y="0.0" width="146" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="267" height="21"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="267" height="27"/>
                                         </variation>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fjc-Kz-J7g">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="mike.pujol88@gmail.com" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fjc-Kz-J7g">
+                                        <rect key="frame" x="0.0" y="32" width="146" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="26" width="267" height="30"/>
+                                            <rect key="frame" x="0.0" y="32" width="267" height="30"/>
                                         </variation>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HOp-f4-0aR">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HOp-f4-0aR">
+                                        <rect key="frame" x="0.0" y="67" width="146" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="61" width="267" height="30"/>
+                                            <rect key="frame" x="0.0" y="67" width="267" height="30"/>
                                         </variation>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auH-Gj-drY">
+                                        <rect key="frame" x="0.0" y="102" width="146" height="30"/>
                                         <state key="normal" title="Sign In"/>
                                         <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="96" width="267" height="30"/>
+                                            <rect key="frame" x="0.0" y="102" width="267" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="signInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GlL-mN-yW6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4A-jF-ViD">
+                                        <rect key="frame" x="0.0" y="137" width="146" height="30"/>
                                         <state key="normal" title="Forgot Password"/>
                                         <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="131" width="267" height="30"/>
+                                            <rect key="frame" x="0.0" y="137" width="267" height="30"/>
                                         </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPe-FN-4Nc">
+                                        <rect key="frame" x="0.0" y="172" width="146" height="30"/>
                                         <state key="normal" title="Create Account"/>
                                         <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="166" width="267" height="30"/>
+                                            <rect key="frame" x="0.0" y="172" width="267" height="30"/>
                                         </variation>
                                     </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sao-Dl-CZ2">
+                                        <rect key="frame" x="0.0" y="207" width="146" height="20"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="124" y="207" width="20" height="20"/>
+                                        </variation>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="HOp-f4-0aR" firstAttribute="width" secondItem="0Md-JL-jSM" secondAttribute="width" id="JJ7-cF-oaI"/>
@@ -78,11 +95,108 @@
                                         <exclude reference="KYM-04-rY8"/>
                                     </mask>
                                 </variation>
+                                <variation key="widthClass=compact" alignment="center" axis="vertical" misplaced="YES">
+                                    <rect key="frame" x="67" y="113" width="267" height="227"/>
+                                    <mask key="constraints">
+                                        <include reference="bdY-fh-XVF"/>
+                                        <include reference="xRh-oz-SWi"/>
+                                        <include reference="JJ7-cF-oaI"/>
+                                        <include reference="bja-Uq-ARM"/>
+                                        <include reference="OVJ-RF-QpE"/>
+                                        <include reference="KYM-04-rY8"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Road Trip Radar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMG-dy-WJK">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Md-JL-jSM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0eb-v8-5hg"/>
+                            <constraint firstItem="0Md-JL-jSM" firstAttribute="top" secondItem="VMG-dy-WJK" secondAttribute="bottom" constant="8" id="QYb-7q-jK4"/>
+                            <constraint firstAttribute="width" secondItem="0Md-JL-jSM" secondAttribute="width" multiplier="1.5" id="SJs-1w-8Ym"/>
+                            <constraint firstItem="0Md-JL-jSM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lT0-v6-Lal"/>
+                            <constraint firstItem="VMG-dy-WJK" firstAttribute="centerX" secondItem="0Md-JL-jSM" secondAttribute="centerX" id="ooS-Vr-YYC"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="VMG-dy-WJK"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="ooS-Vr-YYC"/>
+                                <exclude reference="0eb-v8-5hg"/>
+                                <exclude reference="QYb-7q-jK4"/>
+                                <exclude reference="SJs-1w-8Ym"/>
+                                <exclude reference="lT0-v6-Lal"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="VMG-dy-WJK"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="ooS-Vr-YYC"/>
+                                <include reference="0eb-v8-5hg"/>
+                                <include reference="QYb-7q-jK4"/>
+                                <include reference="SJs-1w-8Ym"/>
+                                <include reference="lT0-v6-Lal"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Road Trip Radar" id="3VB-4u-JRe"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="Fjc-Kz-J7g" id="syv-tA-NP8"/>
+                        <outlet property="passwordTextField" destination="HOp-f4-0aR" id="lN6-B0-f9Z"/>
+                        <outlet property="signInActivityIndicator" destination="sao-Dl-CZ2" id="fAs-t1-mbk"/>
+                        <segue destination="PKu-eL-Nbn" kind="show" identifier="SignInToSplashPage" id="OWE-Ya-Jfx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1951.5" y="-313"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mvc-QG-mDy">
+            <objects>
+                <viewController id="PKu-eL-Nbn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V97-YF-25b"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Vs-ZZ-pw6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OTA-z2-gz1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yay!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRF-Cw-hbJ">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="189" y="289" width="32" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="IRF-Cw-hbJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="IRF-Cw-hbJ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kv8-Vu-AgR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1951.5" y="399"/>
         </scene>
     </scenes>
 </document>
