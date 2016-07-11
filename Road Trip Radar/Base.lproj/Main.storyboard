@@ -152,51 +152,45 @@
                         <outlet property="emailTextField" destination="Fjc-Kz-J7g" id="syv-tA-NP8"/>
                         <outlet property="passwordTextField" destination="HOp-f4-0aR" id="lN6-B0-f9Z"/>
                         <outlet property="signInActivityIndicator" destination="sao-Dl-CZ2" id="fAs-t1-mbk"/>
-                        <segue destination="PKu-eL-Nbn" kind="show" identifier="SignInToSplashPage" id="OWE-Ya-Jfx"/>
+                        <segue destination="ESg-Xg-Viq" kind="show" id="MEU-o0-prd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1951.5" y="-313"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="mvc-QG-mDy">
+        <!--Trips Collection View Controller-->
+        <scene sceneID="nNZ-50-g9c">
             <objects>
-                <viewController id="PKu-eL-Nbn" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="V97-YF-25b"/>
-                        <viewControllerLayoutGuide type="bottom" id="5Vs-ZZ-pw6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OTA-z2-gz1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <collectionViewController id="ESg-Xg-Viq" customClass="TripsCollectionViewController" customModule="Road_Trip_Radar" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="DHQ-5l-hIv">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yay!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRF-Cw-hbJ">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="189" y="289" width="32" height="21"/>
-                                </variation>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="IRF-Cw-hbJ"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="IRF-Cw-hbJ"/>
-                            </mask>
-                        </variation>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kv8-Vu-AgR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g3d-r0-CZj">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TripCell" id="AYU-bB-9fr">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="ESg-Xg-Viq" id="ns5-R8-hMD"/>
+                            <outlet property="delegate" destination="ESg-Xg-Viq" id="UWv-xa-5Jf"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EbF-9Q-T3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951.5" y="399"/>
+            <point key="canvasLocation" x="2694" y="-313"/>
         </scene>
     </scenes>
 </document>
