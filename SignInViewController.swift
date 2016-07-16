@@ -14,7 +14,6 @@ class SignInViewController: UIViewController {
 
     // MARK : Properties
     
-    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInActivityIndicator: UIActivityIndicatorView!
@@ -43,7 +42,7 @@ class SignInViewController: UIViewController {
         //Sign in Analytics
         MeasurementHelper.sendLoginEvent()
         
-        //Intantiate 
+        //Instantiate
         AppState.sharedInstance.displayName = user?.displayName ?? user?.email
         AppState.sharedInstance.photoUrl = user?.photoURL
         
@@ -69,6 +68,8 @@ class SignInViewController: UIViewController {
         let password = passwordTextField.text
         
         FIRAuth.auth()?.signInWithEmail(email!, password: password!, completion: { (user, error) in
+            
+            // Handle any sign in errors
             if let error = error {
                 
                 

@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -34,9 +36,6 @@
                                         <rect key="frame" x="0.0" y="32" width="146" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="32" width="267" height="30"/>
-                                        </variation>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HOp-f4-0aR">
                                         <rect key="frame" x="0.0" y="67" width="146" height="30"/>
@@ -96,7 +95,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" alignment="center" axis="vertical" misplaced="YES">
-                                    <rect key="frame" x="67" y="113" width="267" height="227"/>
+                                    <rect key="frame" x="67" y="97" width="267" height="227"/>
                                     <mask key="constraints">
                                         <include reference="bdY-fh-XVF"/>
                                         <include reference="xRh-oz-SWi"/>
@@ -152,34 +151,166 @@
                         <outlet property="emailTextField" destination="Fjc-Kz-J7g" id="syv-tA-NP8"/>
                         <outlet property="passwordTextField" destination="HOp-f4-0aR" id="lN6-B0-f9Z"/>
                         <outlet property="signInActivityIndicator" destination="sao-Dl-CZ2" id="fAs-t1-mbk"/>
-                        <segue destination="ESg-Xg-Viq" kind="show" id="MEU-o0-prd"/>
+                        <segue destination="2tC-ip-zjO" kind="show" identifier="SignInToSplashPage" id="KRw-d1-7g1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951.5" y="-313"/>
+            <point key="canvasLocation" x="2694" y="-1017"/>
         </scene>
-        <!--Trips Collection View Controller-->
+        <!--Your Trips-->
+        <scene sceneID="HUb-Gz-Sev">
+            <objects>
+                <viewController id="1eD-tp-6pD" customClass="TripViewController" customModule="Road_Trip_Radar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZkZ-br-Gzy"/>
+                        <viewControllerLayoutGuide type="bottom" id="vCp-8k-mbS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rY2-3j-bz2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zJj-Ku-1dR">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oTa-w9-lF4">
+                                    <size key="itemSize" width="181" height="181"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="94H-0j-vEa" customClass="TripCollectionViewCell" customModule="Road_Trip_Radar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="181" height="181"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="1eD-tp-6pD" id="yb7-kf-w4o"/>
+                                    <outlet property="delegate" destination="1eD-tp-6pD" id="IcT-cO-Wug"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zJj-Ku-1dR" secondAttribute="trailing" id="TJa-Pp-HcZ"/>
+                            <constraint firstItem="zJj-Ku-1dR" firstAttribute="bottom" secondItem="vCp-8k-mbS" secondAttribute="top" id="fTo-ss-3YC"/>
+                            <constraint firstItem="zJj-Ku-1dR" firstAttribute="top" secondItem="rY2-3j-bz2" secondAttribute="top" id="lFB-2h-NMk"/>
+                            <constraint firstItem="zJj-Ku-1dR" firstAttribute="leading" secondItem="rY2-3j-bz2" secondAttribute="leading" id="w1N-LH-Lfc"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="zJj-Ku-1dR"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="TJa-Pp-HcZ"/>
+                                <exclude reference="fTo-ss-3YC"/>
+                                <exclude reference="lFB-2h-NMk"/>
+                                <exclude reference="w1N-LH-Lfc"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="zJj-Ku-1dR"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="TJa-Pp-HcZ"/>
+                                <include reference="fTo-ss-3YC"/>
+                                <include reference="lFB-2h-NMk"/>
+                                <include reference="w1N-LH-Lfc"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Your Trips" id="Nac-LZ-wVE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9Yy-ck-R0O">
+                            <connections>
+                                <action selector="addTripButton:" destination="1eD-tp-6pD" id="efF-c5-1ef"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="zJj-Ku-1dR" id="Kgx-bG-Uch"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jr2-It-2Hg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3405" y="-297"/>
+        </scene>
+        <!--Trips-->
         <scene sceneID="nNZ-50-g9c">
             <objects>
                 <collectionViewController id="ESg-Xg-Viq" customClass="TripsCollectionViewController" customModule="Road_Trip_Radar" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="DHQ-5l-hIv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g3d-r0-CZj">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="274" height="274"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TripCell" id="AYU-bB-9fr">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TripCell" id="AYU-bB-9fr" customClass="TripCollectionViewCell" customModule="Road_Trip_Radar" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="274" height="274"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="274" height="274"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bit-tJ-RsJ">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuB-B0-hge">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="VuB-B0-hge" firstAttribute="centerX" secondItem="AYU-bB-9fr" secondAttribute="centerX" id="7lT-NR-zUC"/>
+                                    <constraint firstItem="Bit-tJ-RsJ" firstAttribute="centerY" secondItem="AYU-bB-9fr" secondAttribute="centerY" id="D7r-IV-YKT"/>
+                                    <constraint firstItem="Bit-tJ-RsJ" firstAttribute="centerX" secondItem="AYU-bB-9fr" secondAttribute="centerX" id="MMA-X1-Jzx"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="VuB-B0-hge" secondAttribute="bottom" id="oii-Zc-tkc"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="Bit-tJ-RsJ"/>
+                                        <exclude reference="VuB-B0-hge"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="D7r-IV-YKT"/>
+                                        <exclude reference="MMA-X1-Jzx"/>
+                                        <exclude reference="7lT-NR-zUC"/>
+                                        <exclude reference="oii-Zc-tkc"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="Bit-tJ-RsJ"/>
+                                        <include reference="VuB-B0-hge"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="D7r-IV-YKT"/>
+                                        <include reference="MMA-X1-Jzx"/>
+                                        <include reference="7lT-NR-zUC"/>
+                                        <include reference="oii-Zc-tkc"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="addedByUser" destination="VuB-B0-hge" id="Xdd-SB-09K"/>
+                                    <outlet property="tripNameLabel" destination="Bit-tJ-RsJ" id="3EP-Uy-95S"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -187,10 +318,38 @@
                             <outlet property="delegate" destination="ESg-Xg-Viq" id="UWv-xa-5Jf"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="Trips" id="wGG-gp-rOI">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wrS-Mm-GOS">
+                            <connections>
+                                <action selector="addTripBarButtonItem:" destination="ESg-Xg-Viq" id="4xE-EN-ihn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="DHQ-5l-hIv" id="tjj-xy-8rB"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EbF-9Q-T3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2694" y="-313"/>
+            <point key="canvasLocation" x="3405" y="-1017"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CJG-Zp-M0p">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2tC-ip-zjO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eph-JG-lAk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1eD-tp-6pD" kind="relationship" relationship="rootViewController" id="YNb-la-hd1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eX1-Ox-fhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2694" y="-297"/>
         </scene>
     </scenes>
 </document>

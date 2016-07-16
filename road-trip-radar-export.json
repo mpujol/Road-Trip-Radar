@@ -1,0 +1,22 @@
+// The root of the tree
+// https://<your-firebase-app>.firebaseio.com/
+{
+  // https://<your-firebase-app>.firebaseio.com/grocery-items
+  "grocery-items": {
+ 
+    // https://<your-firebase-app>.firebaseio.com/grocery-items/milk
+    "milk": {
+ 
+      // https://<your-firebase-app>.firebaseio.com/grocery-items/milk/name
+      "name": "Milk",
+ 
+      // https://<your-firebase-app>.firebaseio.com/grocery-items/milk/addedByUser
+      "addedByUser": "David"
+    },
+ 
+    "pizza": {
+      "name": "Pizza",
+      "addedByUser": "Alice"
+    },
+  }
+}
