@@ -41,6 +41,8 @@ class TripViewController: UIViewController, UICollectionViewDataSource, UICollec
     // MARK : Collection View Methods
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        print("Collection view count \(trips.count)")
         return trips.count
     }
     
@@ -49,7 +51,7 @@ class TripViewController: UIViewController, UICollectionViewDataSource, UICollec
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! TripCollectionViewCell
         
         cell.tripNameLabel.text = self.trips[indexPath.row].name
-        cell.addedByUser.text = self.trips[indexPath.row].addedByUser
+        cell.addedByUser.text = "Added By: \(self.trips[indexPath.row].addedByUser)"
         
         
         return cell
@@ -96,6 +98,9 @@ class TripViewController: UIViewController, UICollectionViewDataSource, UICollec
             for trip in self.trips {
                 print(trip.name)
             }
+            
+            self.collectionView.reloadData()
+            
         })
         
     }
