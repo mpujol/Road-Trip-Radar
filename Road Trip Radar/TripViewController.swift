@@ -15,6 +15,16 @@ class TripViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     // MARK : Properties
     
+    var user:FIRUser? {
+        get {
+            if let currentUser = FIRAuth.auth()?.currentUser {
+                print(currentUser.displayName)
+                    return currentUser
+            }
+            print("No user signed in")
+            return nil
+        }
+    }
     @IBOutlet weak var collectionView: UICollectionView!
     
     var trips = [Trip]()
@@ -31,13 +41,15 @@ class TripViewController: UIViewController, UICollectionViewDataSource, UICollec
     // MARK : Collection View Methods
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return trips.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! TripCollectionViewCell
         
+        cell.tripNameLabel.text = self.trips[indexPath.row].name
+        cell.addedByUser.text = self.trips[indexPath.row].addedByUser
         
         
         return cell
@@ -53,14 +65,6 @@ class TripViewController: UIViewController, UICollectionViewDataSource, UICollec
 
         // Do any additional setup after loading the view.
         
-        
-        //Check to see if you're logged in - Sanity check
-        if let user = FIRAuth.auth()?.currentUser {
-            // there is still a user out there
-            
-            print(user.displayName)
-        }
-        
         //Ensure that the database is hooked up
         ref = FIRDatabase.database().reference()
         
@@ -75,26 +79,24 @@ class TripViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.trips.removeAll()
         //Listen for new messages in the Firebase database
         
-        _refHandle = self.ref.child("trip").observeEventType(.Value, withBlock: { snapshot in
+        _refHandle = self.ref.child("trips").observeEventType(.Value, withBlock: { snapshot in
             
-            print(snapshot.value)
+            print("Snapshot value is \(snapshot.value)")
             
             var newTrips = [Trip]()
             
             for trip in snapshot.children {
                 let specificTrip = Trip(snapshot: trip as! FIRDataSnapshot)
                 
-                print(specificTrip.name)
-                
                 newTrips.append(specificTrip)
                 
             }
             
             self.trips = newTrips
-            
+            for trip in self.trips {
+                print(trip.name)
+            }
         })
-        
-        
         
     }
     
@@ -111,11 +113,13 @@ class TripViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBAction func addTripButton(sender: UIBarButtonItem) {
         
-        let tripRef = self.ref.child("trip")
+        let tripRef = self.ref.child("trips")
         
         let sampleTrip = Trip(name: "The Gym", addedByUser: AppState.sharedInstance.displayName!)
         
-        tripRef.setValue(sampleTrip.toAnyObject())
+        tripRef.childByAutoId().setValue(sampleTrip.toAnyObject())
+        
+//        setValue(sampleTrip.toAnyObject())
         print("Trip Added")
         
     }

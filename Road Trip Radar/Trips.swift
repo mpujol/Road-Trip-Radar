@@ -30,7 +30,7 @@ struct Trip {
     init (snapshot: FIRDataSnapshot!) {
         key = snapshot.key
         name = snapshot.value!["name"] as! String
-        addedByUser = snapshot.value!["addedByUser"] as! String
+        addedByUser = snapshot.value!["AddedByUser"] as! String
         ref = snapshot.ref
     }
     
