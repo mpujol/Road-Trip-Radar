@@ -27,11 +27,20 @@ struct User {
     // Initialize the user through FIRUser class
     init(user: FIRUser) {
         uid = user.uid 
-        displayName =  user.displayName!
+        displayName =  user.email!
         email = user.email!
         
     }
     
+    
+    func toAnyObject() -> AnyObject {
+        return [
+            "uid": uid,
+            "displayName": displayName,
+            "email": email
+            
+        ]
+    }
     
 }
 

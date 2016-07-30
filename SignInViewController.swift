@@ -21,8 +21,6 @@ class SignInViewController: UIViewController {
     
     var ref: FIRDatabaseReference!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -142,14 +140,33 @@ class SignInViewController: UIViewController {
         
         FIRAuth.auth()?.createUserWithEmail(email!, password: password!, completion: { (user, error) in
             
-            //log any sign in errors
+            //log any account creation errors
             if let error = error {
-                print(error.localizedDescription)
+                
+                //make some UI to notify the user of any errors & break out of the creation func
+                print(error)
+                
+                return
+                
             }
-            // otherwise add the user to the database
             
-            let newUser = Users
+            
+            //Add the newly created user to the database
+            let newUser = User(user: (FIRAuth.auth()?.currentUser!)!)
+            let newUserRef = self.ref.child("\(newUser.uid)")
+            newUserRef.setValue(newUser.toAnyObject())
+
+            self.signedIn(FIRAuth.auth()?.currentUser)
+            
+            
         })
+        
+//        //Add the newly created user to the database
+//        let newUser = User(user: (FIRAuth.auth()?.currentUser!)!)
+//        let newUserRef = ref.child("\(newUser.uid)")
+//        newUserRef.setValue(newUser.toAnyObject())
+//        
+//        self.signedIn(FIRAuth.auth()?.currentUser)
         
     }
     
