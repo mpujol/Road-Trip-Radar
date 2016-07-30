@@ -15,14 +15,18 @@ struct Trip {
     let key: String!
     let name: String!
     let addedByUser: String!
+    let longitude: String!
+    let latitude: String!
     let ref: FIRDatabaseReference?
     
     // Intitialize the Trip from arbitrary data
     
-    init(name: String, addedByUser: String, key: String = "") {
+    init(name: String, addedByUser: String, latitude: String, longitude: String, key: String = "") {
         self.key = key
         self.name = name
         self.addedByUser = addedByUser
+        self.latitude = latitude
+        self.longitude = longitude
         self.ref = nil
     }
     
@@ -30,7 +34,9 @@ struct Trip {
     init (snapshot: FIRDataSnapshot!) {
         key = snapshot.key
         name = snapshot.value!["name"] as! String
-        addedByUser = snapshot.value!["AddedByUser"] as! String
+        addedByUser = snapshot.value!["addedByUser"] as! String
+        latitude = snapshot.value!["latitude"] as! String
+        longitude = snapshot.value!["longitude"] as! String
         ref = snapshot.ref
     }
     
@@ -38,7 +44,10 @@ struct Trip {
     func toAnyObject() -> AnyObject {
         return [
         "name": name,
-        "AddedByUser": addedByUser]
+        "addedByUser": addedByUser,
+        "latitude": latitude,
+        "longitude": longitude
+        ]
     }
     
 }

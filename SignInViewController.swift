@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 
 class SignInViewController: UIViewController {
@@ -18,11 +19,20 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInActivityIndicator: UIActivityIndicatorView!
     
+    var ref: FIRDatabaseReference!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //Create a reference for the user node
+        let root = FIRDatabase.database().reference()
+        ref = root.child("users")
+        
+        
         
         //Check to see if someone is signed in
         if let user = FIRAuth.auth()?.currentUser {
@@ -31,6 +41,8 @@ class SignInViewController: UIViewController {
             self.signedIn(user)
             
         }
+        
+        
         
     }
 
@@ -116,6 +128,27 @@ class SignInViewController: UIViewController {
             }
             //Set the display name
             self.setDisplayName(user!)
+        })
+        
+    }
+    
+    
+    @IBAction func createAccountButton(sender: UIButton) {
+        
+        self.signInActivityIndicator.startAnimating()
+        
+        let email = emailTextField.text
+        let password = passwordTextField.text
+        
+        FIRAuth.auth()?.createUserWithEmail(email!, password: password!, completion: { (user, error) in
+            
+            //log any sign in errors
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            // otherwise add the user to the database
+            
+            let newUser = Users
         })
         
     }

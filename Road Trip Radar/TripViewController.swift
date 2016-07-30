@@ -120,7 +120,7 @@ class TripViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         let tripRef = self.ref.child("trips")
         
-        let sampleTrip = Trip(name: "The Gym", addedByUser: AppState.sharedInstance.displayName!)
+        let sampleTrip = Trip(name: "The Gym", addedByUser: AppState.sharedInstance.displayName!, latitude: "37.67251", longitude: "-122.472200")
         
         tripRef.childByAutoId().setValue(sampleTrip.toAnyObject())
         
