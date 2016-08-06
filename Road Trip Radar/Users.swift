@@ -30,6 +30,7 @@ struct User {
         displayName =  user.email!
         email = user.email!
         
+        
     }
     
     

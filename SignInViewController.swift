@@ -56,6 +56,10 @@ class SignInViewController: UIViewController {
         AppState.sharedInstance.displayName = user?.displayName ?? user?.email
         AppState.sharedInstance.photoUrl = user?.photoURL
         
+        //Create the users id
+        AppState.sharedInstance.userID = user?.uid
+        
+        
         AppState.sharedInstance.signedIn = true
         NSNotificationCenter.defaultCenter().postNotificationName(Constants.NotificationKeys.SignedIn, object: nil, userInfo: nil)
         
@@ -143,8 +147,26 @@ class SignInViewController: UIViewController {
             //log any account creation errors
             if let error = error {
                 
+                //Log the error
+                print(error.code)
+                
                 //make some UI to notify the user of any errors & break out of the creation func
-                print(error)
+                switch error.code {
+                case 17007 : // Email already registered
+                    let existingUserAlertController = UIAlertController(title: "Existing Email", message: "Someone has registered using the email provided", preferredStyle: .Alert)
+                    let firstAlertAction  = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+                    
+                    existingUserAlertController.addAction(firstAlertAction)
+                    
+                    dispatch_async(dispatch_get_main_queue(), { 
+                        self.presentViewController(existingUserAlertController, animated: true, completion: { 
+                            self.signInActivityIndicator.stopAnimating()
+                        })
+                    })
+                    
+                default:
+                    break
+                }
                 
                 return
                 

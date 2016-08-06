@@ -79,9 +79,9 @@ class TripViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidAppear(animated: Bool) {
         
         self.trips.removeAll()
-        //Listen for new messages in the Firebase database
+        //Listen for new messages in the user-trips
         
-        _refHandle = self.ref.child("trips").observeEventType(.Value, withBlock: { snapshot in
+        _refHandle = self.ref.child("users").child("\(AppState.sharedInstance.userID!)").child("user-trips").observeEventType(.Value, withBlock: { snapshot in
             
             print("Snapshot value is \(snapshot.value)")
             
@@ -118,11 +118,31 @@ class TripViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBAction func addTripButton(sender: UIBarButtonItem) {
         
+        //Add trip information to the User
+        
+        let memberReference = self.ref.child("users").child("\(FIRAuth.auth()?.currentUser?.uid)").child("trips")
+        
+        print(memberReference.description())
+        
+        //Add member information to the Trips
+        
         let tripRef = self.ref.child("trips")
         
         let sampleTrip = Trip(name: "The Gym", addedByUser: AppState.sharedInstance.displayName!, latitude: "37.67251", longitude: "-122.472200")
         
-        tripRef.childByAutoId().setValue(sampleTrip.toAnyObject())
+        let key = tripRef.childByAutoId().key
+        
+        let childUpdates = [
+            "/trips/\(key)": sampleTrip.toAnyObject(),
+            "/users/\(AppState.sharedInstance.userID!)/user-trips/\(key)": sampleTrip.toAnyObject()
+        ]
+        
+        ref.updateChildValues(childUpdates)
+        
+//        tripRef.childByAutoId().setValue(sampleTrip.toAnyObject())
+        
+        //Add trip information to the User
+        
         
 //        setValue(sampleTrip.toAnyObject())
         print("Trip Added")
