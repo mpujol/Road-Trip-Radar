@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -161,7 +162,7 @@
             </objects>
             <point key="canvasLocation" x="2694" y="-1017"/>
         </scene>
-        <!--Your Trips-->
+        <!--Trip View Controller-->
         <scene sceneID="HUb-Gz-Sev">
             <objects>
                 <viewController id="1eD-tp-6pD" customClass="TripViewController" customModule="Road_Trip_Radar" customModuleProvider="target" sceneMemberID="viewController">
@@ -173,6 +174,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="7QW-D8-y5d">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7QW-D8-y5d" secondAttribute="height" multiplier="1:1" id="VIt-Oi-9No"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="VIt-Oi-9No"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="VIt-Oi-9No"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zJj-Ku-1dR">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -243,38 +260,105 @@
                                     <outlet property="delegate" destination="1eD-tp-6pD" id="IcT-cO-Wug"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSp-xf-o2H">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="164" y="72" width="79" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oZ-c1-qro">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="164" y="101" width="116" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last known Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlk-XE-wJS">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="164" y="130" width="157" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lat: 1234  Long: 5678" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsV-5q-8r3">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="164" y="159" width="168" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="zJj-Ku-1dR" secondAttribute="trailing" id="TJa-Pp-HcZ"/>
+                            <constraint firstAttribute="height" secondItem="zJj-Ku-1dR" secondAttribute="height" multiplier="1.5" id="fLP-pl-VhW"/>
                             <constraint firstItem="zJj-Ku-1dR" firstAttribute="bottom" secondItem="vCp-8k-mbS" secondAttribute="top" id="fTo-ss-3YC"/>
+                            <constraint firstItem="7QW-D8-y5d" firstAttribute="leading" secondItem="rY2-3j-bz2" secondAttribute="leadingMargin" constant="-20" id="j49-5k-oWd">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="zJj-Ku-1dR" firstAttribute="top" secondItem="rY2-3j-bz2" secondAttribute="top" id="lFB-2h-NMk"/>
+                            <constraint firstItem="7QW-D8-y5d" firstAttribute="width" secondItem="rY2-3j-bz2" secondAttribute="height" multiplier="1:1" id="mpg-gO-Dbl"/>
+                            <constraint firstItem="zJj-Ku-1dR" firstAttribute="top" secondItem="7QW-D8-y5d" secondAttribute="bottom" constant="-420" id="pap-x2-EXC">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="zJj-Ku-1dR" firstAttribute="leading" secondItem="rY2-3j-bz2" secondAttribute="leading" id="w1N-LH-Lfc"/>
+                            <constraint firstItem="7QW-D8-y5d" firstAttribute="top" secondItem="ZkZ-br-Gzy" secondAttribute="bottom" constant="-4" id="w7x-yK-EA9">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="7QW-D8-y5d"/>
                                 <exclude reference="zJj-Ku-1dR"/>
+                                <exclude reference="NSp-xf-o2H"/>
+                                <exclude reference="5oZ-c1-qro"/>
+                                <exclude reference="nlk-XE-wJS"/>
+                                <exclude reference="CsV-5q-8r3"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="j49-5k-oWd"/>
+                                <exclude reference="mpg-gO-Dbl"/>
+                                <exclude reference="w7x-yK-EA9"/>
                                 <exclude reference="TJa-Pp-HcZ"/>
+                                <exclude reference="fLP-pl-VhW"/>
                                 <exclude reference="fTo-ss-3YC"/>
                                 <exclude reference="lFB-2h-NMk"/>
+                                <exclude reference="pap-x2-EXC"/>
                                 <exclude reference="w1N-LH-Lfc"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="7QW-D8-y5d"/>
                                 <include reference="zJj-Ku-1dR"/>
+                                <include reference="NSp-xf-o2H"/>
+                                <include reference="5oZ-c1-qro"/>
+                                <include reference="nlk-XE-wJS"/>
+                                <include reference="CsV-5q-8r3"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="j49-5k-oWd"/>
+                                <exclude reference="mpg-gO-Dbl"/>
+                                <include reference="w7x-yK-EA9"/>
                                 <include reference="TJa-Pp-HcZ"/>
+                                <include reference="fLP-pl-VhW"/>
                                 <include reference="fTo-ss-3YC"/>
-                                <include reference="lFB-2h-NMk"/>
+                                <exclude reference="lFB-2h-NMk"/>
+                                <include reference="pap-x2-EXC"/>
                                 <include reference="w1N-LH-Lfc"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Your Trips" id="Nac-LZ-wVE">
+                    <navigationItem key="navigationItem" id="Nac-LZ-wVE">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9Yy-ck-R0O">
                             <connections>
                                 <action selector="addTripButton:" destination="1eD-tp-6pD" id="efF-c5-1ef"/>
@@ -543,4 +627,7 @@
             <point key="canvasLocation" x="2694" y="-297"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="user" width="620" height="553"/>
+    </resources>
 </document>
