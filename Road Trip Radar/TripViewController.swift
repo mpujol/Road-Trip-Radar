@@ -11,9 +11,13 @@ import FirebaseDatabase
 import FirebaseAuth
 
 
-class TripViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate  {
+class TripViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
-    // MARK : Properties
+    // MARK: Properties
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var userEmailLabel: UILabel!
+    
     
     var user:FIRUser? {
         get {
@@ -25,7 +29,10 @@ class TripViewController: UIViewController, UICollectionViewDataSource, UICollec
             return nil
         }
     }
-    @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     
     var trips = [Trip]()
     var ref: FIRDatabaseReference!
@@ -33,34 +40,38 @@ class TripViewController: UIViewController, UICollectionViewDataSource, UICollec
     private var _refHandle: FIRDatabaseHandle!
     
     
-    // MARK : Constants
+    // MARK: Constants
     
     private let reuseIdentifier = "TripCell"
     private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     
-    // MARK : Collection View Methods
+    // MARK: Table View Methods
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        print("Collection view count \(trips.count)")
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "My Trips"
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return trips.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! TripCollectionViewCell
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! TripTableViewCell
         
         cell.tripNameLabel.text = self.trips[indexPath.row].name
-        cell.addedByUser.text = "Added By: \(self.trips[indexPath.row].addedByUser)"
-        
+        cell.addedByUser.text = self.trips[indexPath.row].addedByUser
         
         return cell
-    }
-
-    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        
         
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    // MARK: View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +80,8 @@ class TripViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         //Ensure that the database is hooked up
         ref = FIRDatabase.database().reference()
+        
+//        self.usernameLabel.text =
         
         print(ref.root)
         
@@ -99,7 +112,7 @@ class TripViewController: UIViewController, UICollectionViewDataSource, UICollec
                 print(trip.name)
             }
             
-            self.collectionView.reloadData()
+            self.tableView.reloadData()
             
         })
         
@@ -109,6 +122,8 @@ class TripViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.ref.removeObserverWithHandle(_refHandle)
     }
 
+    // MARK: Memory Warning
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
