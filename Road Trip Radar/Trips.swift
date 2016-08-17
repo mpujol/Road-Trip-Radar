@@ -17,16 +17,19 @@ struct Trip {
     let addedByUser: String!
     let longitude: String!
     let latitude: String!
+    let members: [String]
+    // you need the list of members and their lat-long. this will be an array of users that will either be populated by an array of Users(class) or a query
     let ref: FIRDatabaseReference?
     
     // Intitialize the Trip from arbitrary data
     
-    init(name: String, addedByUser: String, latitude: String, longitude: String, key: String = "") {
+    init(name: String, addedByUser: String, latitude: String, longitude: String, key: String = "", members: [String]) {
         self.key = key
         self.name = name
         self.addedByUser = addedByUser
         self.latitude = latitude
         self.longitude = longitude
+        self.members = members
         self.ref = nil
     }
     
@@ -37,6 +40,7 @@ struct Trip {
         addedByUser = snapshot.value!["addedByUser"] as! String
         latitude = snapshot.value!["latitude"] as! String
         longitude = snapshot.value!["longitude"] as! String
+        
         ref = snapshot.ref
     }
     

@@ -81,7 +81,8 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //Ensure that the database is hooked up
         ref = FIRDatabase.database().reference()
         
-//        self.usernameLabel.text =
+        self.usernameLabel.text = FIRAuth.auth()?.currentUser?.displayName
+        self.userEmailLabel.text = FIRAuth.auth()?.currentUser?.email
         
         print(ref.root)
         
