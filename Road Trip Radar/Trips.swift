@@ -9,7 +9,6 @@
 import Foundation
 import FirebaseDatabase
 
-
 struct Trip {
 
     let key: String!
@@ -17,13 +16,13 @@ struct Trip {
     let addedByUser: String!
     let longitude: String!
     let latitude: String!
-    let members: [String]
-    // you need the list of members and their lat-long. this will be an array of users that will either be populated by an array of Users(class) or a query
+    //Dude you need memberss figure it out...
+    var members: [String:String]
     let ref: FIRDatabaseReference?
     
     // Intitialize the Trip from arbitrary data
     
-    init(name: String, addedByUser: String, latitude: String, longitude: String, key: String = "", members: [String]) {
+    init(name: String, addedByUser: String, latitude: String, longitude: String, members: [String:String], key: String = "") {
         self.key = key
         self.name = name
         self.addedByUser = addedByUser
@@ -40,7 +39,7 @@ struct Trip {
         addedByUser = snapshot.value!["addedByUser"] as! String
         latitude = snapshot.value!["latitude"] as! String
         longitude = snapshot.value!["longitude"] as! String
-        
+        members = snapshot.value!["members"] as! Dictionary
         ref = snapshot.ref
     }
     
@@ -50,7 +49,8 @@ struct Trip {
         "name": name,
         "addedByUser": addedByUser,
         "latitude": latitude,
-        "longitude": longitude
+        "longitude": longitude,
+        "members" : members
         ]
     }
     

@@ -111,6 +111,7 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.trips = newTrips
             for trip in self.trips {
                 print(trip.name)
+                print(trip.members.count)
             }
             
             self.tableView.reloadData()
@@ -143,24 +144,20 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //Add member information to the Trips
         
         let tripRef = self.ref.child("trips")
+        //Works!
+        let sampleTrip = Trip(name: "That Place", addedByUser: AppState.sharedInstance.displayName!, latitude: "X", longitude: "Y", members: ["\(AppState.sharedInstance.userID!)": "Going"])
         
-        let sampleTrip = Trip(name: "The Gym", addedByUser: AppState.sharedInstance.displayName!, latitude: "37.67251", longitude: "-122.472200")
+//        let sampleTrip = Trip(name: "The Gym", addedByUser: AppState.sharedInstance.displayName!, latitude: "37.67251", longitude: "-122.472200")
         
         let key = tripRef.childByAutoId().key
         
         let childUpdates = [
-            "/trips/\(key)": sampleTrip.toAnyObject(),
+            "/trips/\(key)": sampleTrip.toAnyObject(),// THis is effed up.... why?
             "/users/\(AppState.sharedInstance.userID!)/user-trips/\(key)": sampleTrip.toAnyObject()
         ]
         
         ref.updateChildValues(childUpdates)
-        
-//        tripRef.childByAutoId().setValue(sampleTrip.toAnyObject())
-        
-        //Add trip information to the User
-        
-        
-//        setValue(sampleTrip.toAnyObject())
+
         print("Trip Added")
         
     }

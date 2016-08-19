@@ -174,11 +174,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Av5-Xr-EVE">
-                                <rect key="frame" x="-20" y="44" width="352" height="176"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Av5-Xr-EVE">
+                                <rect key="frame" x="-20" y="44" width="1295" height="553"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="7QW-D8-y5d">
-                                        <rect key="frame" x="20" y="20" width="136" height="136"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="7QW-D8-y5d">
+                                        <rect key="frame" x="0.0" y="0.0" width="620" height="553"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="7QW-D8-y5d" secondAttribute="height" multiplier="1:1" id="FbJ-OB-jS6"/>
                                         </constraints>
@@ -193,29 +193,29 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ihC-id-ucJ">
-                                        <rect key="frame" x="164" y="28" width="168" height="82"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ihC-id-ucJ">
+                                        <rect key="frame" x="625" y="0.0" width="670" height="553"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSp-xf-o2H">
-                                                <rect key="frame" x="20" y="20" width="79" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSp-xf-o2H">
+                                                <rect key="frame" x="0.0" y="0.0" width="168" height="553"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oZ-c1-qro">
-                                                <rect key="frame" x="20" y="49" width="116" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="E-mail Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oZ-c1-qro">
+                                                <rect key="frame" x="168" y="0.0" width="168" height="553"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last known Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlk-XE-wJS">
-                                                <rect key="frame" x="20" y="78" width="157" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Last known Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlk-XE-wJS">
+                                                <rect key="frame" x="335" y="0.0" width="168" height="553"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lat: 1234  Long: 5678" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsV-5q-8r3">
-                                                <rect key="frame" x="20" y="107" width="168" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Lat: 1234  Long: 5678" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsV-5q-8r3">
+                                                <rect key="frame" x="503" y="0.0" width="168" height="553"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -252,6 +252,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RbU-KD-AAO" id="hZj-hA-iNC">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="85.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiQ-wy-tIH">
@@ -326,13 +327,13 @@
                                 <exclude reference="kDH-eT-NF7"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="hsn-dx-mzF"/>
-                                <exclude reference="C1s-Xy-arO"/>
-                                <exclude reference="KRL-JU-dcM"/>
-                                <exclude reference="TEk-52-nYf"/>
                                 <exclude reference="RIL-im-Iwp"/>
                                 <exclude reference="YJX-Li-Sg2"/>
                                 <exclude reference="foe-Up-kS8"/>
+                                <exclude reference="C1s-Xy-arO"/>
+                                <exclude reference="KRL-JU-dcM"/>
+                                <exclude reference="TEk-52-nYf"/>
+                                <exclude reference="hsn-dx-mzF"/>
                                 <exclude reference="YnV-HS-pY0"/>
                             </mask>
                         </variation>
@@ -341,13 +342,13 @@
                                 <include reference="kDH-eT-NF7"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="hsn-dx-mzF"/>
-                                <include reference="C1s-Xy-arO"/>
-                                <include reference="KRL-JU-dcM"/>
-                                <include reference="TEk-52-nYf"/>
                                 <include reference="RIL-im-Iwp"/>
                                 <include reference="YJX-Li-Sg2"/>
                                 <include reference="foe-Up-kS8"/>
+                                <include reference="C1s-Xy-arO"/>
+                                <include reference="KRL-JU-dcM"/>
+                                <include reference="TEk-52-nYf"/>
+                                <include reference="hsn-dx-mzF"/>
                                 <include reference="YnV-HS-pY0"/>
                             </mask>
                         </variation>
