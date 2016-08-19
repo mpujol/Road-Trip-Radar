@@ -385,6 +385,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Nfo-Tw-1vs">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <connections>
+                                    <outlet property="delegate" destination="urb-fT-V5l" id="bFk-lj-oiJ"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -399,10 +402,10 @@
                                 <exclude reference="Nfo-Tw-1vs"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="efB-0i-AYD"/>
                                 <exclude reference="7Nj-3l-E0s"/>
                                 <exclude reference="EXx-Mm-0HS"/>
                                 <exclude reference="sxZ-7g-GMe"/>
-                                <exclude reference="efB-0i-AYD"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -410,10 +413,10 @@
                                 <include reference="Nfo-Tw-1vs"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="efB-0i-AYD"/>
                                 <include reference="7Nj-3l-E0s"/>
                                 <include reference="EXx-Mm-0HS"/>
                                 <include reference="sxZ-7g-GMe"/>
-                                <include reference="efB-0i-AYD"/>
                             </mask>
                         </variation>
                     </view>

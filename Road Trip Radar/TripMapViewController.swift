@@ -9,12 +9,13 @@
 import UIKit
 import MapKit
 
-class TripMapViewController: UIViewController {
+class TripMapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
     
     var currentTrip: Trip!
+    
     
     private var spanLatitudeDelta = 0.2
     private var spanLongitudeDelta = 0.2
@@ -22,15 +23,19 @@ class TripMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Do any additional setup after loading the view.
+        
         // start off by default in San Francisco
-//        MKCoordinateRegion newRegion;
-//        newRegion.center.latitude = 37.786996;
-//        newRegion.center.longitude = -122.440100;
-//        newRegion.span.latitudeDelta = 0.2;
-//        newRegion.span.longitudeDelta = 0.2;
-//        
-//        [self.mapView setRegion:newRegion animated:YES];
-
+        
+        showDestinationRegion()
+        createDestinationAnnotation()
+        
+    }
+    
+    // MARK: Helper Functions
+    
+    func showDestinationRegion() {
+        
         let currentlocationCenter = CLLocationCoordinate2D(latitude: (currentTrip.latitude as NSString).doubleValue, longitude: (currentTrip.longitude as NSString).doubleValue)
         let currentLocationSpan = MKCoordinateSpan(latitudeDelta: spanLatitudeDelta, longitudeDelta: spanLongitudeDelta)
         
@@ -39,14 +44,21 @@ class TripMapViewController: UIViewController {
         
         self.mapView.setRegion(destinationlocationRegion, animated: true)
         
-        print(currentTrip)
-        // Do any additional setup after loading the view.
     }
+    func createDestinationAnnotation() {
+        //Create an Annotation
+        let destinationLocattioinAnnotation = DestinationAnnotation(coordinate: CLLocationCoordinate2D(latitude: (currentTrip.latitude as NSString).doubleValue, longitude: (currentTrip.longitude as NSString).doubleValue), title: currentTrip.name, subtitle: "")
+        
+        self.mapView.addAnnotation(destinationLocattioinAnnotation)
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
 
     /*
