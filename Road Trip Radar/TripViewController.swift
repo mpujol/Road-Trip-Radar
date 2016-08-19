@@ -43,6 +43,7 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: Constants
     
     private let reuseIdentifier = "TripCell"
+    private let segueIdentifier = "TripDetails"
     private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     
     // MARK: Table View Methods
@@ -60,7 +61,9 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! TripTableViewCell
         
         cell.tripNameLabel.text = self.trips[indexPath.row].name
-        cell.addedByUser.text = self.trips[indexPath.row].addedByUser
+        
+
+        cell.numberOfMembersLabel.text = "Total Members: \(self.trips[indexPath.row].totalMembers)"
         
         return cell
         
@@ -144,15 +147,13 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //Add member information to the Trips
         
         let tripRef = self.ref.child("trips")
-        //Works!
-        let sampleTrip = Trip(name: "That Place", addedByUser: AppState.sharedInstance.displayName!, latitude: "X", longitude: "Y", members: ["\(AppState.sharedInstance.userID!)": "Going"])
-        
-//        let sampleTrip = Trip(name: "The Gym", addedByUser: AppState.sharedInstance.displayName!, latitude: "37.67251", longitude: "-122.472200")
+
+        let sampleTrip = Trip(name: "That Place", addedByUser: AppState.sharedInstance.displayName!, latitude: "37.786996", longitude: "-122.440100", members: ["\(AppState.sharedInstance.userID!)": "Going"])
         
         let key = tripRef.childByAutoId().key
         
         let childUpdates = [
-            "/trips/\(key)": sampleTrip.toAnyObject(),// THis is effed up.... why?
+            "/trips/\(key)": sampleTrip.toAnyObject(),
             "/users/\(AppState.sharedInstance.userID!)/user-trips/\(key)": sampleTrip.toAnyObject()
         ]
         
@@ -163,14 +164,28 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == segueIdentifier {
+            
+//            get the data from that specific trip and pass it along to the destination view controller
+            let rowTapped = (self.tableView.indexPathForSelectedRow?.row)!
+            let tripToSend = trips[rowTapped]
+            print(rowTapped)
+            print(tripToSend)
+            let tmvc = segue.destinationViewController as! TripMapViewController
+            
+            tmvc.currentTrip = tripToSend
+
+        }
+        
     }
-    */
+    
 
 }

@@ -16,8 +16,12 @@ struct Trip {
     let addedByUser: String!
     let longitude: String!
     let latitude: String!
-    //Dude you need memberss figure it out...
     var members: [String:String]
+    var totalMembers:Int {
+        get {
+            return self.members.count
+        }
+    }
     let ref: FIRDatabaseReference?
     
     // Intitialize the Trip from arbitrary data

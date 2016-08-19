@@ -25,6 +25,8 @@
 		BC64EDAC1D307A2100BB3045 /* MeasurementHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64EDA91D307A2100BB3045 /* MeasurementHelper.swift */; };
 		BC64EDAD1D307A2100BB3045 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64EDAA1D307A2100BB3045 /* Constants.swift */; };
 		BCC3E90E1D63D007000149DD /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC3E90D1D63D007000149DD /* TripTableViewCell.swift */; };
+		BCF6D3361D669EA400A98953 /* TripMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6D3351D669EA400A98953 /* TripMapViewController.swift */; };
+		BCF6D3381D66ADB000A98953 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF6D3371D66ADB000A98953 /* MapKit.framework */; };
 		EC7FF0FF196512973C01F8CF /* Pods_Road_Trip_RadarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48F02FE7F627E1621ED361D /* Pods_Road_Trip_RadarTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		BC64EDA91D307A2100BB3045 /* MeasurementHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementHelper.swift; sourceTree = "<group>"; };
 		BC64EDAA1D307A2100BB3045 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BCC3E90D1D63D007000149DD /* TripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
+		BCF6D3351D669EA400A98953 /* TripMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripMapViewController.swift; sourceTree = "<group>"; };
+		BCF6D3371D66ADB000A98953 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C2C3FEECB5F990E83E2E6AD6 /* Pods-Road Trip RadarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Road Trip RadarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Road Trip RadarTests/Pods-Road Trip RadarTests.release.xcconfig"; sourceTree = "<group>"; };
 		F1C6A35E5CA636B67CE9340E /* Pods-Road Trip RadarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Road Trip RadarUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Road Trip RadarUITests/Pods-Road Trip RadarUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F48F02FE7F627E1621ED361D /* Pods_Road_Trip_RadarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Road_Trip_RadarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF6D3381D66ADB000A98953 /* MapKit.framework in Frameworks */,
 				823A09088FF140FDCC25530C /* Pods_Road_Trip_Radar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,6 +128,7 @@
 		972829594196ADCC606F0D68 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BCF6D3371D66ADB000A98953 /* MapKit.framework */,
 				371C3740F53C5E1C33ECFBA1 /* Pods_Road_Trip_Radar.framework */,
 				F48F02FE7F627E1621ED361D /* Pods_Road_Trip_RadarTests.framework */,
 				08B6385C59D0BFC942B8917C /* Pods_Road_Trip_RadarUITests.framework */,
@@ -210,6 +216,7 @@
 			children = (
 				BC64EDA61D3078B600BB3045 /* SignInViewController.swift */,
 				BC4AB9D51D3729D400F724A1 /* TripViewController.swift */,
+				BCF6D3351D669EA400A98953 /* TripMapViewController.swift */,
 				BC4AB9D31D371FE000F724A1 /* TripCollectionViewCell.swift */,
 				BCC3E90D1D63D007000149DD /* TripTableViewCell.swift */,
 			);
@@ -492,6 +499,7 @@
 				BC0EB0531D4D1B8500E3D75D /* User.swift in Sources */,
 				BC64EDAC1D307A2100BB3045 /* MeasurementHelper.swift in Sources */,
 				BC4AB9D61D3729D400F724A1 /* TripViewController.swift in Sources */,
+				BCF6D3361D669EA400A98953 /* TripMapViewController.swift in Sources */,
 				BCC3E90E1D63D007000149DD /* TripTableViewCell.swift in Sources */,
 				BC64EDAB1D307A2100BB3045 /* AppState.swift in Sources */,
 				BC64EDA71D3078B600BB3045 /* SignInViewController.swift in Sources */,

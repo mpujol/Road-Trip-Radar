@@ -11,7 +11,8 @@ import UIKit
 class TripTableViewCell: UITableViewCell {
 
     @IBOutlet weak var tripNameLabel: UILabel!
-    @IBOutlet weak var addedByUser: UILabel!
+    @IBOutlet weak var numberOfMembersLabel: UILabel!
+    
     
 
 }
