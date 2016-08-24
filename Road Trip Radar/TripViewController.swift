@@ -16,23 +16,7 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: Properties
     
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var userEmailLabel: UILabel!
-    
-    
-    var user:FIRUser? {
-        get {
-            if let currentUser = FIRAuth.auth()?.currentUser {
-                print(currentUser.displayName)
-                    return currentUser
-            }
-            print("No user signed in")
-            return nil
-        }
-    }
-    
     @IBOutlet weak var tableView: UITableView!
-    
-    
     
     var trips = [Trip]()
     var ref: FIRDatabaseReference!
@@ -86,8 +70,7 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //Ensure that the database is hooked up
         ref = FIRDatabase.database().reference()
         
-        self.usernameLabel.text = FIRAuth.auth()?.currentUser?.displayName
-        self.userEmailLabel.text = FIRAuth.auth()?.currentUser?.email
+        self.usernameLabel.text = AppState.sharedInstance.displayName //FIRAuth.auth()?.currentUser?.displayName
         
         print(ref.root)
         
@@ -117,9 +100,13 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
             for trip in self.trips {
                 print(trip.name)
                 print(trip.members.count)
+                for (key,value) in trip.members {
+                    print("\(key):\(value)")
+                }
             }
             
             self.tableView.reloadData()
+        
             
         })
         
@@ -142,7 +129,7 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         //Add trip information to the User
         
-        let memberReference = self.ref.child("users").child("\(FIRAuth.auth()?.currentUser?.uid)").child("trips")
+        let memberReference = self.ref.child("users").child("\(AppState.sharedInstance.userID)").child("trips")
         
         print(memberReference.description())
         

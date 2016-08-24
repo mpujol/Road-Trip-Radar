@@ -11,9 +11,26 @@ import FirebaseAuth
 import FirebaseDatabase
 
 struct User {
+//    let key: String
     let uid: String!
     let displayName: String!
     let email: String!
+//    let photoURL: String?
+//    let latitude: String?
+//    let longitude: String?
+    
+    
+    /*
+    
+     Root: UID
+        Details:
+            Email
+            User Trips
+            PhotoURL
+            Location - Lat-Long
+     
+     
+    */
     
     
     // Intitialize user through user creation

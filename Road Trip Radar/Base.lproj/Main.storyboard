@@ -201,18 +201,18 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="E-mail Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oZ-c1-qro">
-                                                <rect key="frame" x="168" y="0.0" width="168" height="553"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="88" y="0.0" width="79" height="34"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Last known Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlk-XE-wJS">
                                                 <rect key="frame" x="335" y="0.0" width="168" height="553"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="49" y="34" width="157" height="33"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Lat: 1234  Long: 5678" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsV-5q-8r3">
                                                 <rect key="frame" x="503" y="0.0" width="168" height="553"/>
@@ -220,11 +220,11 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="widthClass=compact" misplaced="YES">
-                                                    <rect key="frame" x="0.0" y="75" width="168" height="25"/>
+                                                    <rect key="frame" x="44" y="67" width="168" height="34"/>
                                                 </variation>
                                             </label>
                                         </subviews>
-                                        <variation key="widthClass=compact" alignment="top" axis="vertical"/>
+                                        <variation key="widthClass=compact" alignment="center" axis="vertical"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -363,7 +363,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="kDH-eT-NF7" id="t0k-4e-qmR"/>
-                        <outlet property="userEmailLabel" destination="5oZ-c1-qro" id="JLz-fL-XQl"/>
                         <outlet property="usernameLabel" destination="NSp-xf-o2H" id="nEa-ib-shn"/>
                     </connections>
                 </viewController>
@@ -473,185 +472,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tHy-2t-I7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4176" y="-297"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="y1n-WS-QcK">
-            <objects>
-                <viewController id="I5q-FM-AsP" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Y3w-sU-0wW"/>
-                        <viewControllerLayoutGuide type="bottom" id="jhJ-gd-NiA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4XZ-Xv-pek">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFi-gz-XlJ">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="392" width="79" height="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t30-K0-mSO">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="430" width="66" height="21"/>
-                                </variation>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sgo-LS-cCy">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="107" y="388" width="273" height="30"/>
-                                </variation>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SpB-CI-o27">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="107" y="426" width="273" height="30"/>
-                                </variation>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d17-XI-UPi">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="468" width="66" height="21"/>
-                                </variation>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AbY-WH-JC4">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="107" y="464" width="273" height="30"/>
-                                </variation>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="IFi-gz-XlJ"/>
-                                <exclude reference="t30-K0-mSO"/>
-                                <exclude reference="sgo-LS-cCy"/>
-                                <exclude reference="SpB-CI-o27"/>
-                                <exclude reference="d17-XI-UPi"/>
-                                <exclude reference="AbY-WH-JC4"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="IFi-gz-XlJ"/>
-                                <include reference="t30-K0-mSO"/>
-                                <include reference="sgo-LS-cCy"/>
-                                <include reference="SpB-CI-o27"/>
-                                <include reference="d17-XI-UPi"/>
-                                <include reference="AbY-WH-JC4"/>
-                            </mask>
-                        </variation>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rYA-oV-EId" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4176" y="-1017"/>
-        </scene>
-        <!--Trips-->
-        <scene sceneID="nNZ-50-g9c">
-            <objects>
-                <collectionViewController id="ESg-Xg-Viq" customClass="TripsCollectionViewController" customModule="Road_Trip_Radar" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="DHQ-5l-hIv">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g3d-r0-CZj">
-                            <size key="itemSize" width="274" height="274"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TripCell" id="AYU-bB-9fr" customClass="TripCollectionViewCell" customModule="Road_Trip_Radar" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="274" height="274"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="274" height="274"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bit-tJ-RsJ">
-                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuB-B0-hge">
-                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="VuB-B0-hge" firstAttribute="centerX" secondItem="AYU-bB-9fr" secondAttribute="centerX" id="7lT-NR-zUC"/>
-                                    <constraint firstItem="Bit-tJ-RsJ" firstAttribute="centerY" secondItem="AYU-bB-9fr" secondAttribute="centerY" id="D7r-IV-YKT"/>
-                                    <constraint firstItem="Bit-tJ-RsJ" firstAttribute="centerX" secondItem="AYU-bB-9fr" secondAttribute="centerX" id="MMA-X1-Jzx"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="VuB-B0-hge" secondAttribute="bottom" id="oii-Zc-tkc"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="Bit-tJ-RsJ"/>
-                                        <exclude reference="VuB-B0-hge"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <exclude reference="D7r-IV-YKT"/>
-                                        <exclude reference="MMA-X1-Jzx"/>
-                                        <exclude reference="7lT-NR-zUC"/>
-                                        <exclude reference="oii-Zc-tkc"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="subviews">
-                                        <include reference="Bit-tJ-RsJ"/>
-                                        <include reference="VuB-B0-hge"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <include reference="D7r-IV-YKT"/>
-                                        <include reference="MMA-X1-Jzx"/>
-                                        <include reference="7lT-NR-zUC"/>
-                                        <include reference="oii-Zc-tkc"/>
-                                    </mask>
-                                </variation>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="ESg-Xg-Viq" id="ns5-R8-hMD"/>
-                            <outlet property="delegate" destination="ESg-Xg-Viq" id="UWv-xa-5Jf"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" title="Trips" id="wGG-gp-rOI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wrS-Mm-GOS">
-                            <connections>
-                                <action selector="addTripBarButtonItem:" destination="ESg-Xg-Viq" id="4xE-EN-ihn"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="collectionView" destination="DHQ-5l-hIv" id="tjj-xy-8rB"/>
-                    </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EbF-9Q-T3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3405" y="-1017"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CJG-Zp-M0p">
