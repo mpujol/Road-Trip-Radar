@@ -17,7 +17,6 @@
 		BC3206121D3063F7007D3E1B /* Road_Trip_RadarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3206111D3063F7007D3E1B /* Road_Trip_RadarTests.swift */; };
 		BC32061D1D3063F7007D3E1B /* Road_Trip_RadarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC32061C1D3063F7007D3E1B /* Road_Trip_RadarUITests.swift */; };
 		BC32062B1D306BE5007D3E1B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC32062A1D306BE5007D3E1B /* GoogleService-Info.plist */; };
-		BC4AB9D41D371FE000F724A1 /* TripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4AB9D31D371FE000F724A1 /* TripCollectionViewCell.swift */; };
 		BC4AB9D61D3729D400F724A1 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4AB9D51D3729D400F724A1 /* TripViewController.swift */; };
 		BC52B4231D35E8C500EE569A /* Trips.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC52B4221D35E8C500EE569A /* Trips.swift */; };
 		BC5F27DB1D678074001A004C /* DestinationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F27DA1D678074001A004C /* DestinationAnnotation.swift */; };
@@ -69,7 +68,6 @@
 		BC32061C1D3063F7007D3E1B /* Road_Trip_RadarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Road_Trip_RadarUITests.swift; sourceTree = "<group>"; };
 		BC32061E1D3063F7007D3E1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC32062A1D306BE5007D3E1B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BC4AB9D31D371FE000F724A1 /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCollectionViewCell.swift; sourceTree = "<group>"; };
 		BC4AB9D51D3729D400F724A1 /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		BC52B4221D35E8C500EE569A /* Trips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trips.swift; sourceTree = "<group>"; };
 		BC5F27DA1D678074001A004C /* DestinationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationAnnotation.swift; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 				BC64EDA61D3078B600BB3045 /* SignInViewController.swift */,
 				BC4AB9D51D3729D400F724A1 /* TripViewController.swift */,
 				BCF6D3351D669EA400A98953 /* TripMapViewController.swift */,
-				BC4AB9D31D371FE000F724A1 /* TripCollectionViewCell.swift */,
 				BCC3E90D1D63D007000149DD /* TripTableViewCell.swift */,
 				BC5F27E01D67826A001A004C /* Annotation */,
 			);
@@ -514,7 +511,6 @@
 				BCC3E90E1D63D007000149DD /* TripTableViewCell.swift in Sources */,
 				BC64EDAB1D307A2100BB3045 /* AppState.swift in Sources */,
 				BC64EDA71D3078B600BB3045 /* SignInViewController.swift in Sources */,
-				BC4AB9D41D371FE000F724A1 /* TripCollectionViewCell.swift in Sources */,
 				BC3205FD1D3063F7007D3E1B /* AppDelegate.swift in Sources */,
 				BC52B4231D35E8C500EE569A /* Trips.swift in Sources */,
 				BC5F27DB1D678074001A004C /* DestinationAnnotation.swift in Sources */,

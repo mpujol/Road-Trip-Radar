@@ -42,9 +42,11 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: Constants
     
-    private let reuseIdentifier = "TripCell"
-    private let segueIdentifier = "TripDetails"
-    private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    struct Constants {
+        static let reuseIdentifier = "TripCell"
+        static let segueIdentifier = "TripDetails"
+        static let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    }
     
     // MARK: Table View Methods
     
@@ -58,7 +60,7 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! TripTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.reuseIdentifier, forIndexPath: indexPath) as! TripTableViewCell
         
         cell.tripNameLabel.text = self.trips[indexPath.row].name
         
@@ -172,7 +174,7 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if segue.identifier == segueIdentifier {
+        if segue.identifier == Constants.segueIdentifier {
             
 //            get the data from that specific trip and pass it along to the destination view controller
             let rowTapped = (self.tableView.indexPathForSelectedRow?.row)!
