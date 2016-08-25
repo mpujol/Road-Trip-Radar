@@ -70,7 +70,7 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //Ensure that the database is hooked up
         ref = FIRDatabase.database().reference()
         
-        self.usernameLabel.text = AppState.sharedInstance.displayName //FIRAuth.auth()?.currentUser?.displayName
+        setUserInformation()
         
         print(ref.root)
         
@@ -78,7 +78,17 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    func setUserInformation() {
+        
+        self.usernameLabel.text = AppState.sharedInstance.displayName //FIRAuth.auth()?.currentUser?.displayName
+        
+    }
+    
     override func viewDidAppear(animated: Bool) {
+        
+        print("TVC Appeared")
+        
+        self.setUserInformation()
         
         self.trips.removeAll()
         //Listen for new messages in the user-trips
