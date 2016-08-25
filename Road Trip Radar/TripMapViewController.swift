@@ -8,10 +8,13 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class TripMapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    
+    
     
     
     var currentTrip: Trip!
@@ -22,8 +25,11 @@ class TripMapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
+        // Change the name of the VC to the name of the trip
+        self.title = currentTrip.name
         
         // start off by default in San Francisco
         

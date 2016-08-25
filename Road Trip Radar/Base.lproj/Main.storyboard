@@ -174,6 +174,7 @@
                         <viewControllerLayoutGuide type="bottom" id="8bY-Fz-SdU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QUl-fk-lhd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oGE-Gc-W41">
@@ -205,7 +206,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4Y-yR-7Gj">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -236,11 +237,11 @@
                                 <exclude reference="GpX-8L-UTb"/>
                                 <exclude reference="ihO-xK-hYr"/>
                                 <exclude reference="t2S-L9-MKJ"/>
+                                <exclude reference="5Vo-Ed-KxO"/>
                                 <exclude reference="1VT-HX-NAS"/>
                                 <exclude reference="9MC-g0-MC7"/>
                                 <exclude reference="NqW-Zo-SPe"/>
                                 <exclude reference="xNZ-Qe-I6M"/>
-                                <exclude reference="5Vo-Ed-KxO"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -255,11 +256,11 @@
                                 <include reference="GpX-8L-UTb"/>
                                 <include reference="ihO-xK-hYr"/>
                                 <include reference="t2S-L9-MKJ"/>
+                                <include reference="5Vo-Ed-KxO"/>
                                 <include reference="1VT-HX-NAS"/>
                                 <include reference="9MC-g0-MC7"/>
                                 <include reference="NqW-Zo-SPe"/>
                                 <include reference="xNZ-Qe-I6M"/>
-                                <include reference="5Vo-Ed-KxO"/>
                             </mask>
                         </variation>
                     </view>
@@ -285,20 +286,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Av5-Xr-EVE">
-                                <rect key="frame" x="-20" y="44" width="1128" height="553"/>
+                                <rect key="frame" x="-20" y="44" width="797" height="553"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Yg-0y-exb">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Yg-0y-exb">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="553"/>
                                         <state key="normal" title="Edit"/>
-                                        <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="35" width="30" height="30"/>
-                                        </variation>
                                         <connections>
                                             <segue destination="ALd-vF-K6H" kind="presentation" id="Scj-mN-pdk"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="7QW-D8-y5d">
-                                        <rect key="frame" x="0.0" y="0.0" width="620" height="553"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="7QW-D8-y5d">
+                                        <rect key="frame" x="35" y="0.0" width="620" height="553"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="7QW-D8-y5d" secondAttribute="height" multiplier="1:1" id="FbJ-OB-jS6"/>
                                         </constraints>
@@ -307,18 +305,17 @@
                                                 <exclude reference="FbJ-OB-jS6"/>
                                             </mask>
                                         </variation>
-                                        <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="35" y="0.0" width="100" height="100"/>
+                                        <variation key="widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="FbJ-OB-jS6"/>
                                             </mask>
                                         </variation>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ihC-id-ucJ">
-                                        <rect key="frame" x="625" y="0.0" width="503" height="553"/>
+                                        <rect key="frame" x="660" y="0.0" width="137" height="553"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NSp-xf-o2H">
-                                                <rect key="frame" x="0.0" y="0.0" width="168" height="553"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="137" height="553"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -327,9 +324,7 @@
                                                 </variation>
                                             </label>
                                         </subviews>
-                                        <variation key="widthClass=compact" alignment="center" axis="vertical" misplaced="YES">
-                                            <rect key="frame" x="140" y="0.0" width="220" height="100"/>
-                                        </variation>
+                                        <variation key="widthClass=compact" alignment="center" axis="vertical"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
