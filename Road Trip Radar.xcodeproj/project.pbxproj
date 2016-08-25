@@ -11,6 +11,7 @@
 		823A09088FF140FDCC25530C /* Pods_Road_Trip_Radar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371C3740F53C5E1C33ECFBA1 /* Pods_Road_Trip_Radar.framework */; };
 		BC0EB0531D4D1B8500E3D75D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0EB0521D4D1B8500E3D75D /* User.swift */; };
 		BC30C7411D6FA2DE00321D67 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC30C7401D6FA2DE00321D67 /* CoreLocation.framework */; };
+		BC30C7431D6FB69000321D67 /* The Pier.gpx in Resources */ = {isa = PBXBuildFile; fileRef = BC30C7421D6FB69000321D67 /* The Pier.gpx */; };
 		BC3205FD1D3063F7007D3E1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3205FC1D3063F7007D3E1B /* AppDelegate.swift */; };
 		BC3206021D3063F7007D3E1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC3206001D3063F7007D3E1B /* Main.storyboard */; };
 		BC3206041D3063F7007D3E1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC3206031D3063F7007D3E1B /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		AF7596C3F9EDAA2A429B84E1 /* Pods-Road Trip RadarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Road Trip RadarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Road Trip RadarTests/Pods-Road Trip RadarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC0EB0521D4D1B8500E3D75D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BC30C7401D6FA2DE00321D67 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BC30C7421D6FB69000321D67 /* The Pier.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "The Pier.gpx"; sourceTree = "<group>"; };
 		BC3205F91D3063F7007D3E1B /* Road Trip Radar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Road Trip Radar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3205FC1D3063F7007D3E1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC3206011D3063F7007D3E1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		BC52B4241D35F7ED00EE569A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BC30C7421D6FB69000321D67 /* The Pier.gpx */,
 				BC52B4221D35E8C500EE569A /* Trips.swift */,
 				BC0EB0521D4D1B8500E3D75D /* User.swift */,
 				BC64EDA81D307A2100BB3045 /* AppState.swift */,
@@ -323,6 +326,11 @@
 					BC3205F81D3063F7007D3E1B = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 2BPJV79PL6;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					BC32060C1D3063F7007D3E1B = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -360,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC3206071D3063F7007D3E1B /* LaunchScreen.storyboard in Resources */,
+				BC30C7431D6FB69000321D67 /* The Pier.gpx in Resources */,
 				BC32062B1D306BE5007D3E1B /* GoogleService-Info.plist in Resources */,
 				BC3206041D3063F7007D3E1B /* Assets.xcassets in Resources */,
 				BC3206021D3063F7007D3E1B /* Main.storyboard in Resources */,

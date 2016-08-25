@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="Xcode"> 
+
+    <!--
+            Provide one or more waypoints containing a latitude/longitude pair. If you provide one
+            waypoint, Xcode will simulate that specific location. If you provide multiple waypoints,
+            Xcode will simulate a route visitng each waypoint.
+     -->
+    <wpt lat="37.794511" lon="-122.389728">
+        <name>Pier 14 End</name>
+        <time>2014-09-24T14:30:37Z</time>
+    </wpt>
+    <wpt lat="37.793472" lon="-122.391515">
+        <name>Pier 14 Start</name>
+        <time>2014-09-24T14:32:37Z</time>
+    </wpt>
+    <wpt lat="37.793527" lon="-122.391906">
+        <name>Boardwalk Start</name>
+        <time>2014-09-24T14:33:37Z</time>
+    </wpt>
+    <wpt lat="37.792298" lon="-122.390410">
+        <name>Boardwalk 1</name>
+        <time>2014-09-24T14:36:37Z</time>
+    </wpt>
+    <wpt lat="37.791281" lon="-122.389498">
+        <name>Boardwalk 2</name>
+        <time>2014-09-24T14:38:37Z</time>
+    </wpt>
+    <wpt lat="37.790395" lon="-122.388774">
+        <name>Boardwalk 3</name>
+        <time>2014-09-24T14:40:37Z</time>
+    </wpt>
+    <wpt lat="37.791281" lon="-122.389498">
+        <name>Boardwalk 2</name>
+        <time>2014-09-24T14:42:37Z</time>
+    </wpt>®
+    <wpt lat="37.792298" lon="-122.390410">
+        <name>Boardwalk 1</name>
+        <time>2014-09-24T14:45:37Z</time>
+    </wpt>
+    <wpt lat="37.793527" lon="-122.391906">
+        <name>Boardwalk Start</name>
+        <time>2014-09-24T14:47:37Z</time>
+    </wpt>
+    <wpt lat="37.793472" lon="-122.391515">
+        <name>Pier 14 Start</name>
+        <time>2014-09-24T14:48:37Z</time>
+    </wpt>
+    <wpt lat="37.794511" lon="-122.389728">
+        <name>Pier 14 End</name>
+        <time>2014-09-24T14:52:37Z</time>
+    </wpt>
+    
+</gpx>
