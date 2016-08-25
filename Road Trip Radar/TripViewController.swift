@@ -86,7 +86,7 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidAppear(animated: Bool) {
         
-        print("TVC Appeared")
+        print("TVC Appeared \(AppState.sharedInstance.displayName)")
         
         self.setUserInformation()
         

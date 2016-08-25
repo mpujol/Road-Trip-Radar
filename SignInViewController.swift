@@ -63,6 +63,8 @@ class SignInViewController: UIViewController {
         AppState.sharedInstance.signedIn = true
         NSNotificationCenter.defaultCenter().postNotificationName(Constants.NotificationKeys.SignedIn, object: nil, userInfo: nil)
         
+        print("your display name is \(AppState.sharedInstance.displayName)")
+        
         self.signInActivityIndicator.stopAnimating()
         
         performSegueWithIdentifier(Constants.Segues.SignInToSplashPage, sender: nil)
@@ -129,7 +131,8 @@ class SignInViewController: UIViewController {
                 return
             }
             //Set the display name
-            self.setDisplayName(user!)
+//            self.setDisplayName(user!)
+            self.signedIn(FIRAuth.auth()?.currentUser)
         })
         
     }
