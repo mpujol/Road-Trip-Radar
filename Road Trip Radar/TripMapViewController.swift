@@ -21,11 +21,11 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     lazy var locationManager: CLLocationManager = {
         var _locationManager = CLLocationManager()
         _locationManager.delegate = self
-        _locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        _locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
         _locationManager.activityType  = .AutomotiveNavigation
         
         // Movement threshold for new events
-        _locationManager.distanceFilter = 10.0
+        _locationManager.distanceFilter = 1000.0
         return _locationManager
     }()
     
@@ -90,6 +90,7 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         mapView.showsUserLocation = true
         
         
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,11 +98,19 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         // Dispose of any resources that can be recreated.
     }
     
+    private var RefreshCount = 0
     
     // MARK: CLLocationManagerDelegate
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        <#code#>
+        //go through the locations
+        for location in locations {
+            print(location.coordinate.latitude)
+            print(location.coordinate.longitude)
+            print(location.timestamp)
+        }
+        RefreshCount += 1
+        print(RefreshCount)
     }
 
     /*
