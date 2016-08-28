@@ -10,13 +10,18 @@ import UIKit
 import MapKit
 import CoreLocation
 
+import FirebaseDatabase
+import FirebaseAuth
+
 class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
     var currentTrip: Trip!
     
+    var ref: FIRDatabaseReference!
     
+    private var _refHandle: FIRDatabaseHandle!
     
     lazy var locationManager: CLLocationManager = {
         var _locationManager = CLLocationManager()
@@ -40,6 +45,10 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         // Do any additional setup after loading the view.
         
+        // Ensure that the database root is hooked up
+        ref = FIRDatabase.database().reference()
+        print(" The database root is = \(ref.root)")
+        
         // Change the name of the VC to the name of the trip
         self.title = currentTrip.name
         
@@ -58,7 +67,12 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         locationManager.requestAlwaysAuthorization()
         print(CLLocationManager.authorizationStatus().rawValue)
         
-        
+        // create a reference handle here to update any changes to the user
+        _refHandle = self.ref.child("trips").child(currentTrip.key).observeEventType(.Value, withBlock: { (snapshot) in
+            // if any of the user's coordinates changes you need to referesh the annotations
+            
+            // Speaking of which you need to create an array of annotations.. dumbass
+        })
     }
     
     
@@ -88,8 +102,7 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
-        
-        
+    
         
     }
 
@@ -109,6 +122,19 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             print(location.coordinate.longitude)
             print(location.timestamp)
         }
+        
+        //Get the user's last location in the locations array
+        var lastLocation = locations.last
+        
+        //Pull the users latitude & longitude
+        var lastLong = lastLocation?.coordinate.longitude
+        var lastLat = lastLocation?.coordinate.latitude
+        
+        
+        //Push the changes to the database in all instances of the trip
+        
+        
+        
         RefreshCount += 1
         print(RefreshCount)
     }
