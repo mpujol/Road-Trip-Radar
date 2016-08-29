@@ -34,6 +34,7 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         return _locationManager
     }()
     
+    //You need an array of users along with their locations
     
     private var spanLatitudeDelta = 0.2
     private var spanLongitudeDelta = 0.2
@@ -124,16 +125,21 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         }
         
         //Get the user's last location in the locations array
-        var lastLocation = locations.last
-        
-        //Pull the users latitude & longitude
-        var lastLong = lastLocation?.coordinate.longitude
-        var lastLat = lastLocation?.coordinate.latitude
-        
-        
-        //Push the changes to the database in all instances of the trip
-        
-        
+        if let lastLocation = locations.last {
+            
+            //Pull the users latitude & longitude
+            let lastLong = ("\(lastLocation.coordinate.longitude)")
+            let lastLat = ("\(lastLocation.coordinate.latitude)")
+            let lastTimestamp = ("\(lastLocation.timestamp)")
+            
+            // Create a struct to add the last l
+            let lastLocationStruct = Location(latitude: lastLat, longitude: lastLong, timestamp: lastTimestamp)
+            //Push the changes to the database in all instances of the trip
+            let memberLocationRef = ref.child("users").child(AppState.sharedInstance.userID!).child("location")
+            
+            memberLocationRef.setValue(lastLocationStruct.toAnyObject())
+            
+        }
         
         RefreshCount += 1
         print(RefreshCount)

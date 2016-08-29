@@ -21,7 +21,7 @@
 		BC32062B1D306BE5007D3E1B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC32062A1D306BE5007D3E1B /* GoogleService-Info.plist */; };
 		BC4AB9D61D3729D400F724A1 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4AB9D51D3729D400F724A1 /* TripViewController.swift */; };
 		BC4DEE311D73A9A600F96DE7 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4DEE301D73A9A600F96DE7 /* Location.swift */; };
-		BC52B4231D35E8C500EE569A /* Trips.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC52B4221D35E8C500EE569A /* Trips.swift */; };
+		BC52B4231D35E8C500EE569A /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC52B4221D35E8C500EE569A /* Trip.swift */; };
 		BC5F27DB1D678074001A004C /* DestinationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F27DA1D678074001A004C /* DestinationAnnotation.swift */; };
 		BC64EDA71D3078B600BB3045 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64EDA61D3078B600BB3045 /* SignInViewController.swift */; };
 		BC64EDAB1D307A2100BB3045 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64EDA81D307A2100BB3045 /* AppState.swift */; };
@@ -76,7 +76,7 @@
 		BC32062A1D306BE5007D3E1B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BC4AB9D51D3729D400F724A1 /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		BC4DEE301D73A9A600F96DE7 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		BC52B4221D35E8C500EE569A /* Trips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trips.swift; sourceTree = "<group>"; };
+		BC52B4221D35E8C500EE569A /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		BC5F27DA1D678074001A004C /* DestinationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationAnnotation.swift; sourceTree = "<group>"; };
 		BC64EDA61D3078B600BB3045 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = ../SignInViewController.swift; sourceTree = "<group>"; };
 		BC64EDA81D307A2100BB3045 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -204,7 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				BC30C7421D6FB69000321D67 /* The Pier.gpx */,
-				BC52B4221D35E8C500EE569A /* Trips.swift */,
+				BC52B4221D35E8C500EE569A /* Trip.swift */,
 				BC4DEE301D73A9A600F96DE7 /* Location.swift */,
 				BC0EB0521D4D1B8500E3D75D /* User.swift */,
 				BC64EDA81D307A2100BB3045 /* AppState.swift */,
@@ -533,7 +533,7 @@
 				BC64EDAB1D307A2100BB3045 /* AppState.swift in Sources */,
 				BC64EDA71D3078B600BB3045 /* SignInViewController.swift in Sources */,
 				BC3205FD1D3063F7007D3E1B /* AppDelegate.swift in Sources */,
-				BC52B4231D35E8C500EE569A /* Trips.swift in Sources */,
+				BC52B4231D35E8C500EE569A /* Trip.swift in Sources */,
 				BC5F27DB1D678074001A004C /* DestinationAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

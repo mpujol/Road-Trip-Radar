@@ -56,7 +56,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
                     //Change the user's singleton to match the updated display name
                     AppState.sharedInstance.displayName = self.displayNameTextField.text
 
-                    let tvc = self.presentingViewController as? TripViewController
+//                    let tvc = self.presentingViewController as? TripViewController
                     
                     
                  
