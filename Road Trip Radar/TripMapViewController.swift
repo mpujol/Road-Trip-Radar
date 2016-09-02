@@ -26,15 +26,15 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     lazy var locationManager: CLLocationManager = {
         var _locationManager = CLLocationManager()
         _locationManager.delegate = self
-        _locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        _locationManager.desiredAccuracy = kCLLocationAccuracyBest
         _locationManager.activityType  = .AutomotiveNavigation
         
         // Movement threshold for new events
-        _locationManager.distanceFilter = 1000.0
+        _locationManager.distanceFilter = 10.0
         return _locationManager
     }()
     
-    //You need an array of users along with their locations
+    //You need an array of users along with their locations (Points of Interest)
     
     private var spanLatitudeDelta = 0.2
     private var spanLongitudeDelta = 0.2
@@ -96,16 +96,25 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         let destinationLocattioinAnnotation = DestinationAnnotation(coordinate: CLLocationCoordinate2D(latitude: (currentTrip.latitude as NSString).doubleValue, longitude: (currentTrip.longitude as NSString).doubleValue), title: currentTrip.name, subtitle: "")
         
         self.mapView.addAnnotation(destinationLocattioinAnnotation)
+    
     }
     
     // Location Tracking
     func startUpdatingLocation() {
         
         locationManager.startUpdatingLocation()
-        mapView.showsUserLocation = true
+        
+        
+        // Instead of showing the user's location through the locationUI drop a pin.
+        
+        
+        mapView.showsUserLocation = false
     
         
     }
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -132,7 +141,7 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             let lastLat = ("\(lastLocation.coordinate.latitude)")
             let lastTimestamp = ("\(lastLocation.timestamp)")
             
-            // Create a struct to add the last l
+            // Create a struct to add the last location
             let lastLocationStruct = Location(latitude: lastLat, longitude: lastLong, timestamp: lastTimestamp)
             //Push the changes to the database in all instances of the trip
             let memberLocationRef = ref.child("users").child(AppState.sharedInstance.userID!).child("location")
@@ -141,8 +150,49 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             
         }
         
+        for annotation in self.mapView.annotations {
+            
+            // If there is an existing user location remove it
+            if annotation.isKindOfClass(UserLocationAnnotation) {
+                mapView.removeAnnotation(annotation)
+                print("User annotation removed")
+                
+            }
+            
+            //Add the most recent user location to the mapvView
+            else {
+                
+                let userLocationAnnotation = UserLocationAnnotation(coordinate: (locations.last?.coordinate)!, title: "User", subtitle: "")
+                
+                mapView.addAnnotation(userLocationAnnotation)
+                print("User annotation added")
+            }
+            
+            
+            
+        }
+    
         RefreshCount += 1
         print(RefreshCount)
+    }
+    
+    // MARK: MapView Delegates
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        let annotationIdentifier = "pinIdentifier"
+        
+        for annotation in mapView.annotations {
+            if annotation.isKindOfClass(UserLocationAnnotation) {
+                let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+                pinView.pinTintColor = UIColor.purpleColor()
+                pinView.animatesDrop = true
+                
+                return pinView
+            }
+        }
+        
+        return nil
+        
     }
 
     /*

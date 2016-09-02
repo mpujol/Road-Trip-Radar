@@ -17,7 +17,7 @@ struct Trip {
     let longitude: String!
     let latitude: String!
     var members: [String:String]
-    var totalMembers:Int {
+    var totalMembers: Int {
         get {
             return self.members.count
         }
