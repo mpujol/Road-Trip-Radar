@@ -179,16 +179,36 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     // MARK: MapView Delegates
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         
-        let annotationIdentifier = "pinIdentifier"
+        let UserAnnotationIdentifier = "UserPinIdentifier"
+        let DestinationAnnotationIdentifier = "DestinationPinIdentifier"
         
+        
+        //Go through each annotation to identify its type
         for annotation in mapView.annotations {
-            if annotation.isKindOfClass(UserLocationAnnotation) {
-                let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            
+            //Create a switch for the different types of annotations so that it can load the appropriate NKAnnotationView
+            
+            switch annotation {
+            case is UserLocationAnnotation:
+                
+                let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: UserAnnotationIdentifier)
                 pinView.pinTintColor = UIColor.purpleColor()
                 pinView.animatesDrop = true
                 
                 return pinView
+                
+            case is DestinationAnnotation:
+                
+                let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: DestinationAnnotationIdentifier)
+                pinView.pinTintColor = UIColor.redColor()
+                pinView.animatesDrop = true
+                
+                return pinView
+                
+            default:
+                break
             }
+            
         }
         
         return nil
