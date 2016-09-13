@@ -105,9 +105,7 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         locationManager.startUpdatingLocation()
         
         
-        // Instead of showing the user's location through the locationUI drop a pin.
-        
-        
+        // Instead of showing the user's location through the locationUI drop a pin
         mapView.showsUserLocation = false
     
         

@@ -11,15 +11,15 @@ import FirebaseAuth
 import FirebaseDatabase
 
 struct User {
-//    let key: String
+    
+    let key: String
     let uid: String!
     let displayName: String!
     let email: String!
-//    let photoURL: String?
-//    let latitude: String?
-//    let longitude: String?
+    var latitude: String!
+    var longitude: String!
     
-    
+    let ref: FIRDatabaseReference?
     /*
     
      Root: UID
@@ -34,19 +34,23 @@ struct User {
     
     
     // Intitialize user through user creation
-    init(uid: String, displayName: String, email: String) {
+    init(uid: String, displayName: String, email: String, latitude: String = "", longitude: String = "", key: String = "") {
+        self.key = key
         self.uid = uid
         self.displayName = displayName
         self.email = email
+        self.ref = nil
         
     }
     
-    // Initialize the user through FIRUser class
-    init(user: FIRUser) {
-        uid = user.uid 
-        displayName =  user.email!
-        email = user.email!
-        
+    // Initialize the user through a Snapshot
+    init(snapshot: FIRDataSnapshot) {
+        uid = snapshot.value!["uid"] as! String
+        displayName =  snapshot.value!["displayName"] as! String
+        email = snapshot.value!["email"] as! String
+        latitude = snapshot.value!["latitude"] as! String
+        longitude = snapshot.value!["longitude"] as! String
+        ref = snapshot.ref
         
     }
     
