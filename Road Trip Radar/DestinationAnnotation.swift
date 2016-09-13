@@ -25,5 +25,26 @@ class DestinationAnnotation: NSObject, MKAnnotation {
         self.title = title
         self.subtitle = title
     }
+    
+    class func createViewAnnotationForMapView(mapView: MKMapView , annotation: MKAnnotation) -> MKPinAnnotationView {
+        
+        //try to dequeue an existing pin view first
+        var returnedAnnotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(NSStringFromClass(DestinationAnnotation)) as? MKPinAnnotationView
+        print("this is the identifier \(NSStringFromClass(DestinationAnnotation))")
+        //if there is no existing pin view create a new one
+        if returnedAnnotationView == nil {
+            returnedAnnotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: NSStringFromClass(DestinationAnnotation))
+        
+            returnedAnnotationView!.pinTintColor = UIColor.purpleColor()
+            returnedAnnotationView!.animatesDrop = true
+            returnedAnnotationView!.canShowCallout = true
+            
+        
+        }
+        
+        return returnedAnnotationView!
+        
+    }
+    
 
 }

@@ -179,39 +179,28 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     // MARK: MapView Delegates
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         
-        let UserAnnotationIdentifier = "UserPinIdentifier"
-        let DestinationAnnotationIdentifier = "DestinationPinIdentifier"
+        var returnedAnnotationView: MKAnnotationView?
         
+        //Create a switch for the different types of annotations so that it can load the appropriate NKAnnotationView
         
-        //Go through each annotation to identify its type
-        for annotation in mapView.annotations {
+        switch annotation {
+        case is UserLocationAnnotation:
             
-            //Create a switch for the different types of annotations so that it can load the appropriate NKAnnotationView
+            returnedAnnotationView = UserLocationAnnotation.createViewAnnotationForMapView(self.mapView, annotation: annotation)
             
-            switch annotation {
-            case is UserLocationAnnotation:
-                
-                let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: UserAnnotationIdentifier)
-                pinView.pinTintColor = UIColor.purpleColor()
-                pinView.animatesDrop = true
-                
-                return pinView
-                
-            case is DestinationAnnotation:
-                
-                let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: DestinationAnnotationIdentifier)
-                pinView.pinTintColor = UIColor.redColor()
-                pinView.animatesDrop = true
-                
-                return pinView
-                
-            default:
-                break
-            }
+            return returnedAnnotationView!
             
+        case is DestinationAnnotation:
+            
+            returnedAnnotationView = DestinationAnnotation.createViewAnnotationForMapView(self.mapView, annotation: annotation)
+            
+            return returnedAnnotationView!
+            
+        default:
+            break
         }
-        
-        return nil
+    
+    return nil
         
     }
 
