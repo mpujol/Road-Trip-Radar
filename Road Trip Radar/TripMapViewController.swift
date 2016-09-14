@@ -21,6 +21,18 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     var ref: FIRDatabaseReference!
     
+    var members:[String] {
+        get {
+            
+            var listOfMembers = [String]()
+            
+            for (member, _) in currentTrip.members {
+                listOfMembers.append(member)
+            }
+            return listOfMembers
+        }
+    }
+    
     private var _refHandle: FIRDatabaseHandle!
     
     lazy var locationManager: CLLocationManager = {
@@ -34,7 +46,9 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         return _locationManager
     }()
     
-    //You need an array of users along with their locations (Points of Interest)
+    //You need an array of users along with their locations (Points of Interest "the user should be included in the array of points")
+    
+    
     
     private var spanLatitudeDelta = 0.2
     private var spanLongitudeDelta = 0.2
@@ -46,10 +60,12 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         // Do any additional setup after loading the view.
         
+        
+        
         // Ensure that the database root is hooked up
         ref = FIRDatabase.database().reference()
         print(" The database root is = \(ref.root)")
-        
+        print("The total number of members in this trip is \(members.count)")
         // Change the name of the VC to the name of the trip
         self.title = currentTrip.name
         
@@ -57,7 +73,11 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         showDestinationRegion()
         createDestinationAnnotation()
+        
         startUpdatingLocation()
+        
+        
+        
         
     }
     
@@ -73,11 +93,16 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             // if any of the user's coordinates changes you need to referesh the annotations
             
             // Speaking of which you need to create an array of annotations.. dumbass
+            
+            // Oh also make sure that if a user is added to the trip it is tracked in realtime
         })
     }
     
     
     // MARK: Helper Functions
+    
+    //Find all members
+    
     
     // Final Destination
     func showDestinationRegion() {

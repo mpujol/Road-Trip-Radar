@@ -13,7 +13,6 @@ import FirebaseDatabase
 struct User {
     
     let key: String
-    let uid: String!
     let displayName: String!
     let email: String!
     var latitude: String!
@@ -21,23 +20,10 @@ struct User {
     var lastUpdatedTimeStamp: String!
     
     let ref: FIRDatabaseReference?
-    /*
-    
-     Root: UID
-        Details:
-            Email
-            User Trips
-            PhotoURL
-            Location - Lat-Long
-     
-     
-    */
-    
     
     // Intitialize user through user creation
-    init(key: String = "", uid: String, displayName: String, email: String, latitude: String = "", longitude: String = "", lastUpdatedTimeStamp: String = "") {
+    init(key: String = "", displayName: String, email: String, latitude: String = "", longitude: String = "", lastUpdatedTimeStamp: String = "") {
         self.key = key
-        self.uid = uid
         self.displayName = displayName
         self.email = email
         self.latitude = latitude
@@ -50,7 +36,6 @@ struct User {
     // Initialize the user through a Snapshot
     init(snapshot: FIRDataSnapshot!) {
         key = snapshot.key
-        uid = snapshot.value!["uid"] as! String
         displayName =  snapshot.value!["displayName"] as! String
         email = snapshot.value!["email"] as! String
         latitude = snapshot.value!["latitude"] as! String
@@ -63,9 +48,11 @@ struct User {
     
     func toAnyObject() -> AnyObject {
         return [
-            "uid": uid,
             "displayName": displayName,
-            "email": email
+            "email": email,
+            "latitude": latitude,
+            "longitude": longitude,
+            "lastUpdatedTimeStamp": lastUpdatedTimeStamp
             
         ]
     }

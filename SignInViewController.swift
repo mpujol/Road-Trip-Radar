@@ -177,9 +177,14 @@ class SignInViewController: UIViewController {
             
             
             //Add the newly created user to the database
-            let newUser = User(user: (FIRAuth.auth()?.currentUser!)!)
-            let newUserRef = self.ref.child("\(newUser.uid)")
-            newUserRef.setValue(newUser.toAnyObject())
+            
+            if let createdUser = user {
+                let newUser = User(displayName: createdUser.displayName ?? createdUser.email!, email: createdUser.email!)
+                let newUserRef = self.ref.child("\(createdUser.uid)")
+                newUserRef.setValue(newUser.toAnyObject())
+                
+                
+            }
 
             self.signedIn(FIRAuth.auth()?.currentUser)
             
