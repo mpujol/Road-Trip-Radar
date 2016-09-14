@@ -18,6 +18,7 @@ struct User {
     let email: String!
     var latitude: String!
     var longitude: String!
+    var lastUpdatedTimeStamp: String!
     
     let ref: FIRDatabaseReference?
     /*
@@ -34,22 +35,27 @@ struct User {
     
     
     // Intitialize user through user creation
-    init(uid: String, displayName: String, email: String, latitude: String = "", longitude: String = "", key: String = "") {
+    init(key: String = "", uid: String, displayName: String, email: String, latitude: String = "", longitude: String = "", lastUpdatedTimeStamp: String = "") {
         self.key = key
         self.uid = uid
         self.displayName = displayName
         self.email = email
+        self.latitude = latitude
+        self.longitude = longitude
+        self.lastUpdatedTimeStamp = lastUpdatedTimeStamp
         self.ref = nil
         
     }
     
     // Initialize the user through a Snapshot
-    init(snapshot: FIRDataSnapshot) {
+    init(snapshot: FIRDataSnapshot!) {
+        key = snapshot.key
         uid = snapshot.value!["uid"] as! String
         displayName =  snapshot.value!["displayName"] as! String
         email = snapshot.value!["email"] as! String
         latitude = snapshot.value!["latitude"] as! String
         longitude = snapshot.value!["longitude"] as! String
+        lastUpdatedTimeStamp = snapshot.value!["lastUpdatedTimeStamp"] as! String
         ref = snapshot.ref
         
     }
