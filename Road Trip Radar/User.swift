@@ -18,6 +18,7 @@ struct User {
     var latitude: String!
     var longitude: String!
     var lastUpdatedTimeStamp: String!
+    var photoURL: String?
     
     let ref: FIRDatabaseReference?
     
@@ -41,6 +42,8 @@ struct User {
         latitude = snapshot.value!["latitude"] as! String
         longitude = snapshot.value!["longitude"] as! String
         lastUpdatedTimeStamp = snapshot.value!["lastUpdatedTimeStamp"] as! String
+        photoURL = snapshot.value!["photoURL"] as? String
+        
         ref = snapshot.ref
         
     }

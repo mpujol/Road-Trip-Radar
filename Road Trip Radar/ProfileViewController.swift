@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class ProfileViewController: UIViewController, UITextFieldDelegate {
+class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: Properties & Outlets
     
@@ -39,7 +39,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
+        
+        //Check to see if the user is valid
         let user = FIRAuth.auth()?.currentUser
+        
         
         if let user = user {
             let changeRequest = user.profileChangeRequest()
@@ -73,6 +76,69 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
+    
+    func changeUserName() {
+        
+    }
+    
+    // MARK: Action
+    
+    @IBAction func tapUserPhoto(sender: UITapGestureRecognizer) {
+        
+        //here is where you want to bring up a choice between taking a new picture or selecting an existing one
+        
+        //Create an Alert Controller to let the user decide where to get a photo from
+        
+        let selectPhotoSourceAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        
+        let takePhotoAction = UIAlertAction(title: "Take Photo", style: .Default) { (action) in
+            
+            //Check to see if the device has a camera
+            if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+
+                let imagePicker = UIImagePickerController()
+                
+                imagePicker.sourceType = .Camera
+                
+                imagePicker.delegate = self
+                
+                self.presentViewController(imagePicker, animated: true, completion: nil)
+                
+            } else {
+                //let the user know that the device does not have a camera... which is a  surprise
+                
+                let noCameraAlertController = UIAlertController(title: "No Camera", message: "Your device does not have a camera", preferredStyle: .Alert)
+                
+                let dismissAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil)
+                
+                noCameraAlertController.addAction(dismissAction)
+                
+                self.presentViewController(noCameraAlertController, animated: true, completion: nil)
+            }
+            
+        }
+        
+        selectPhotoSourceAlertController.addAction(takePhotoAction)
+        
+        let selectPhotoAction = UIAlertAction(title: "Select Profile Picture", style: .Default) { (action) in
+            //Open the cameral Roll
+        }
+        
+        selectPhotoSourceAlertController.addAction(selectPhotoAction)
+        
+        let cancelPhotoSourceAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            //Dismiss the ActionSheet VC
+            selectPhotoSourceAlertController.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        selectPhotoSourceAlertController.addAction(cancelPhotoSourceAlertAction)
+        
+        self.presentViewController(selectPhotoSourceAlertController, animated: true, completion: nil)
+        
+        
+    }
+    
+    
 
     /*
     // MARK: - Navigation

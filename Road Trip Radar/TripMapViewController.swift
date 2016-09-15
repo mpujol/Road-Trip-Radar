@@ -21,6 +21,8 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     var ref: FIRDatabaseReference!
     
+    
+    // This will create an array of members whenever it
     var members:[String] {
         get {
             
@@ -90,7 +92,10 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         // create a reference handle here to update any changes to the user
         _refHandle = self.ref.child("trips").child(currentTrip.key).observeEventType(.Value, withBlock: { (snapshot) in
-            // if any of the user's coordinates changes you need to referesh the annotations
+            
+            // The current trips details need to be updated here
+            
+            
             
             // Speaking of which you need to create an array of annotations.. dumbass
             
