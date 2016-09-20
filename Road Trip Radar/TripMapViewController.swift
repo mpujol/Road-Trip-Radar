@@ -35,13 +35,13 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         }
     }
     
-    private var _refHandle: FIRDatabaseHandle!
+    fileprivate var _refHandle: FIRDatabaseHandle!
     
     lazy var locationManager: CLLocationManager = {
         var _locationManager = CLLocationManager()
         _locationManager.delegate = self
         _locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        _locationManager.activityType  = .AutomotiveNavigation
+        _locationManager.activityType  = .automotiveNavigation
         
         // Movement threshold for new events
         _locationManager.distanceFilter = 10.0
@@ -52,8 +52,8 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     
     
-    private var spanLatitudeDelta = 0.2
-    private var spanLongitudeDelta = 0.2
+    fileprivate var spanLatitudeDelta = 0.2
+    fileprivate var spanLongitudeDelta = 0.2
     
     // MARK: View Life Cycle
     
@@ -83,7 +83,7 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Perform any additional setup here
@@ -91,7 +91,7 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         print(CLLocationManager.authorizationStatus().rawValue)
         
         // create a reference handle here to update any changes to the user
-        _refHandle = self.ref.child("trips").child(currentTrip.key).observeEventType(.Value, withBlock: { (snapshot) in
+        _refHandle = self.ref.child("trips").child(currentTrip.key).observe(.value, with: { (snapshot) in
             
             // The current trips details need to be updated here
             
@@ -149,11 +149,11 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         // Dispose of any resources that can be recreated.
     }
     
-    private var RefreshCount = 0
+    fileprivate var RefreshCount = 0
     
     // MARK: CLLocationManagerDelegate
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //go through the locations
         for location in locations {
             print(location.coordinate.latitude)
@@ -181,7 +181,7 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         for annotation in self.mapView.annotations {
             
             // If there is an existing user location remove it
-            if annotation.isKindOfClass(UserLocationAnnotation) {
+            if annotation.isKind(of: UserLocationAnnotation.self) {
                 mapView.removeAnnotation(annotation)
                 print("User annotation removed")
                 
@@ -205,7 +205,7 @@ class TripMapViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
     
     // MARK: MapView Delegates
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         var returnedAnnotationView: MKAnnotationView?
         

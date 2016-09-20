@@ -21,7 +21,7 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var trips = [Trip]()
     var ref: FIRDatabaseReference!
     
-    private var _refHandle: FIRDatabaseHandle!
+    fileprivate var _refHandle: FIRDatabaseHandle!
     
     
     // MARK: Constants
@@ -34,29 +34,29 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: Table View Methods
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "My Trips"
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return trips.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.reuseIdentifier, forIndexPath: indexPath) as! TripTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.reuseIdentifier, for: indexPath) as! TripTableViewCell
         
-        cell.tripNameLabel.text = self.trips[indexPath.row].name
+        cell.tripNameLabel.text = self.trips[(indexPath as NSIndexPath).row].name
         
 
-        cell.numberOfMembersLabel.text = "Total Members: \(self.trips[indexPath.row].totalMembers)"
+        cell.numberOfMembersLabel.text = "Total Members: \(self.trips[(indexPath as NSIndexPath).row].totalMembers)"
         
         return cell
         
         
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
@@ -84,7 +84,7 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
         print("TVC Appeared \(AppState.sharedInstance.displayName)")
         
@@ -93,7 +93,7 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.trips.removeAll()
         //Listen for new messages in the user-trips
         
-        _refHandle = self.ref.child("users").child("\(AppState.sharedInstance.userID!)").child("user-trips").observeEventType(.Value, withBlock: { snapshot in
+        _refHandle = self.ref.child("users").child("\(AppState.sharedInstance.userID!)").child("user-trips").observe(.value, with: { snapshot in
             
             print("Snapshot value is \(snapshot.value)")
             
@@ -122,8 +122,8 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        self.ref.removeObserverWithHandle(_refHandle)
+    override func viewWillDisappear(_ animated: Bool) {
+        self.ref.removeObserver(withHandle: _refHandle)
     }
 
     // MARK: Memory Warning
@@ -135,7 +135,7 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: Actions
     
-    @IBAction func addTripButton(sender: UIBarButtonItem) {
+    @IBAction func addTripButton(_ sender: UIBarButtonItem) {
         
         //Add trip information to the User
         
@@ -167,18 +167,18 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
         if segue.identifier == Constants.segueIdentifier {
             
 //            get the data from that specific trip and pass it along to the destination view controller
-            let rowTapped = (self.tableView.indexPathForSelectedRow?.row)!
+            let rowTapped = ((self.tableView.indexPathForSelectedRow as NSIndexPath?)?.row)!
             let tripToSend = trips[rowTapped]
             print(rowTapped)
             print(tripToSend)
-            let tmvc = segue.destinationViewController as! TripMapViewController
+            let tmvc = segue.destination as! TripMapViewController
             
             tmvc.currentTrip = tripToSend
 

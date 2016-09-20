@@ -37,7 +37,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     // MARK: UITextField Functions
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         
         //Check to see if the user is valid
@@ -49,7 +49,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             
             //Change the users display name
             changeRequest.displayName = displayNameTextField.text
-            changeRequest.commitChangesWithCompletion({ (error) in
+            changeRequest.commitChanges(completion: { (error) in
                 if let error = error {
                     print(error.localizedDescription)
                     
@@ -64,7 +64,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
                     
                  
                     //dismiss the modal view controller
-                    self.dismissViewControllerAnimated(true, completion: { 
+                    self.dismiss(animated: true, completion: { 
 
                         print("Label Chaged")
                     })
@@ -83,57 +83,57 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     // MARK: Action
     
-    @IBAction func tapUserPhoto(sender: UITapGestureRecognizer) {
+    @IBAction func tapUserPhoto(_ sender: UITapGestureRecognizer) {
         
         //here is where you want to bring up a choice between taking a new picture or selecting an existing one
         
         //Create an Alert Controller to let the user decide where to get a photo from
         
-        let selectPhotoSourceAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        let selectPhotoSourceAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        let takePhotoAction = UIAlertAction(title: "Take Photo", style: .Default) { (action) in
+        let takePhotoAction = UIAlertAction(title: "Take Photo", style: .default) { (action) in
             
             //Check to see if the device has a camera
-            if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
 
                 let imagePicker = UIImagePickerController()
                 
-                imagePicker.sourceType = .Camera
+                imagePicker.sourceType = .camera
                 
                 imagePicker.delegate = self
                 
-                self.presentViewController(imagePicker, animated: true, completion: nil)
+                self.present(imagePicker, animated: true, completion: nil)
                 
             } else {
                 //let the user know that the device does not have a camera... which is a  surprise
                 
-                let noCameraAlertController = UIAlertController(title: "No Camera", message: "Your device does not have a camera", preferredStyle: .Alert)
+                let noCameraAlertController = UIAlertController(title: "No Camera", message: "Your device does not have a camera", preferredStyle: .alert)
                 
-                let dismissAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil)
+                let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
                 
                 noCameraAlertController.addAction(dismissAction)
                 
-                self.presentViewController(noCameraAlertController, animated: true, completion: nil)
+                self.present(noCameraAlertController, animated: true, completion: nil)
             }
             
         }
         
         selectPhotoSourceAlertController.addAction(takePhotoAction)
         
-        let selectPhotoAction = UIAlertAction(title: "Select Profile Picture", style: .Default) { (action) in
+        let selectPhotoAction = UIAlertAction(title: "Select Profile Picture", style: .default) { (action) in
             //Open the cameral Roll
         }
         
         selectPhotoSourceAlertController.addAction(selectPhotoAction)
         
-        let cancelPhotoSourceAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+        let cancelPhotoSourceAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
             //Dismiss the ActionSheet VC
-            selectPhotoSourceAlertController.dismissViewControllerAnimated(true, completion: nil)
+            selectPhotoSourceAlertController.dismiss(animated: true, completion: nil)
         }
         
         selectPhotoSourceAlertController.addAction(cancelPhotoSourceAlertAction)
         
-        self.presentViewController(selectPhotoSourceAlertController, animated: true, completion: nil)
+        self.present(selectPhotoSourceAlertController, animated: true, completion: nil)
         
         
     }

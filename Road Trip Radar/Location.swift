@@ -34,14 +34,14 @@ struct Location {
     //Initialize the location from a snapshot
     init(snapshot: FIRDataSnapshot!) {
         key = snapshot.key
-        latitude = snapshot.value!["latitude"] as! String
-        longitude = snapshot.value!["longitude"] as! String
-        timestamp = snapshot.value!["timestamp"] as! String
+        latitude = snapshot.value(forKey: "latitude") as! String
+        longitude = snapshot.value(forKey: "longitude") as! String
+        timestamp = snapshot.value(forKey: "timestamp") as! String
         ref = snapshot.ref
     }
     
     // turn the struct into a dictionary for the JSON file
-    func toAnyObject() -> AnyObject {
+    func toAnyObject() -> Any {
         return [
             "latitude": latitude,
             "longitude": latitude,

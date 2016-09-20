@@ -11,6 +11,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 
+
 class SignInViewController: UIViewController {
 
     // MARK : Properties
@@ -47,7 +48,7 @@ class SignInViewController: UIViewController {
     // MARK : Helper Methods
     
     //This function creates an instance for the user that can be pasesed along through the different controllers
-    func signedIn(user: FIRUser?) {
+    func signedIn(_ user: FIRUser?) {
         
         //Sign in Analytics
         MeasurementHelper.sendLoginEvent()
@@ -61,20 +62,20 @@ class SignInViewController: UIViewController {
         
         
         AppState.sharedInstance.signedIn = true
-        NSNotificationCenter.defaultCenter().postNotificationName(Constants.NotificationKeys.SignedIn, object: nil, userInfo: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.NotificationKeys.SignedIn), object: nil, userInfo: nil)
         
         print("your display name is \(AppState.sharedInstance.displayName)")
         
         self.signInActivityIndicator.stopAnimating()
         
-        performSegueWithIdentifier(Constants.Segues.SignInToSplashPage, sender: nil)
+        performSegue(withIdentifier: Constants.Segues.SignInToSplashPage, sender: nil)
         
         
     }
     
     // MARK : Actions
     
-    @IBAction func signInButton(sender: UIButton) {
+    @IBAction func signInButton(_ sender: UIButton) {
         
         //Sign in with credentials
         
@@ -83,7 +84,8 @@ class SignInViewController: UIViewController {
         let email = emailTextField.text
         let password = passwordTextField.text
         
-        FIRAuth.auth()?.signInWithEmail(email!, password: password!, completion: { (user, error) in
+        FIRAuth.auth()?.signIn(withEmail: email!, password: password!) { (user, error) in
+            
             
             // Handle any sign in errors
             if let error = error {
@@ -93,13 +95,13 @@ class SignInViewController: UIViewController {
                 case 17009 : // incorrect password with a valid email
                     print("You kinda miss-typed your password bruh")
                     
-                    let incorrectPasswordAlertController = UIAlertController(title: "Incorrect Password", message: "The password you have entered is incorrect", preferredStyle: .Alert)
-                    let firstAlertAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+                    let incorrectPasswordAlertController = UIAlertController(title: "Incorrect Password", message: "The password you have entered is incorrect", preferredStyle: .alert)
+                    let firstAlertAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
                     
                     incorrectPasswordAlertController.addAction(firstAlertAction)
                     
-                    dispatch_async(dispatch_get_main_queue(), { 
-                        self.presentViewController(incorrectPasswordAlertController, animated: true, completion: { 
+                    DispatchQueue.main.async(execute: { 
+                        self.present(incorrectPasswordAlertController, animated: true, completion: { 
                             self.passwordTextField.text = ""
                         })
                     })
@@ -107,13 +109,13 @@ class SignInViewController: UIViewController {
                 case 17011 : // incorrect email address
                     print("You kinda miss-typed your password bruh")
                     
-                    let incorrectPasswordAlertController = UIAlertController(title: "Invalid Email Address", message: "The email you have entered is not valid", preferredStyle: .Alert)
-                    let firstAlertAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+                    let incorrectPasswordAlertController = UIAlertController(title: "Invalid Email Address", message: "The email you have entered is not valid", preferredStyle: .alert)
+                    let firstAlertAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
                     
                     incorrectPasswordAlertController.addAction(firstAlertAction)
                     
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.presentViewController(incorrectPasswordAlertController, animated: true, completion: {
+                    DispatchQueue.main.async(execute: {
+                        self.present(incorrectPasswordAlertController, animated: true, completion: {
                             self.passwordTextField.text = ""
                         })
                     })
@@ -133,19 +135,19 @@ class SignInViewController: UIViewController {
             //Set the display name
 //            self.setDisplayName(user!)
             self.signedIn(FIRAuth.auth()?.currentUser)
-        })
+        }
         
     }
     
     
-    @IBAction func createAccountButton(sender: UIButton) {
+    @IBAction func createAccountButton(_ sender: UIButton) {
         
         self.signInActivityIndicator.startAnimating()
         
         let email = emailTextField.text
         let password = passwordTextField.text
         
-        FIRAuth.auth()?.createUserWithEmail(email!, password: password!, completion: { (user, error) in
+        FIRAuth.auth()?.createUser(withEmail: email!, password: password!, completion: { (user, error) in
             
             //log any account creation errors
             if let error = error {
@@ -156,13 +158,13 @@ class SignInViewController: UIViewController {
                 //make some UI to notify the user of any errors & break out of the creation func
                 switch error.code {
                 case 17007 : // Email already registered
-                    let existingUserAlertController = UIAlertController(title: "Existing Email", message: "Someone has registered using the email provided", preferredStyle: .Alert)
-                    let firstAlertAction  = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+                    let existingUserAlertController = UIAlertController(title: "Existing Email", message: "Someone has registered using the email provided", preferredStyle: .alert)
+                    let firstAlertAction  = UIAlertAction(title: "Okay", style: .default, handler: nil)
                     
                     existingUserAlertController.addAction(firstAlertAction)
                     
-                    dispatch_async(dispatch_get_main_queue(), { 
-                        self.presentViewController(existingUserAlertController, animated: true, completion: { 
+                    DispatchQueue.main.async(execute: { 
+                        self.present(existingUserAlertController, animated: true, completion: { 
                             self.signInActivityIndicator.stopAnimating()
                         })
                     })
@@ -193,10 +195,10 @@ class SignInViewController: UIViewController {
         
     }
     
-    func setDisplayName(user: FIRUser!) {
+    func setDisplayName(_ user: FIRUser!) {
         let changeRequest = user.profileChangeRequest()
-        changeRequest.displayName = user.email!.componentsSeparatedByString("@")[0]
-        changeRequest.commitChangesWithCompletion { (error) in
+        changeRequest.displayName = user.email!.components(separatedBy: "@")[0]
+        changeRequest.commitChanges { (error) in
             if let error = error {
                 print(error.localizedDescription)
                 return

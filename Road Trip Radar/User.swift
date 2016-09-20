@@ -37,19 +37,19 @@ struct User {
     // Initialize the user through a Snapshot
     init(snapshot: FIRDataSnapshot!) {
         key = snapshot.key
-        displayName =  snapshot.value!["displayName"] as! String
-        email = snapshot.value!["email"] as! String
-        latitude = snapshot.value!["latitude"] as! String
-        longitude = snapshot.value!["longitude"] as! String
-        lastUpdatedTimeStamp = snapshot.value!["lastUpdatedTimeStamp"] as! String
-        photoURL = snapshot.value!["photoURL"] as? String
+        displayName = snapshot.value(forKey: "displayName") as! String
+        email = snapshot.value(forKey: "email") as! String
+        latitude = snapshot.value(forKey: "latitude") as! String
+        longitude = snapshot.value(forKey: "longitude") as! String
+        lastUpdatedTimeStamp = snapshot.value(forKey: "lastUpdatedTimeStamp") as! String
+        photoURL = snapshot.value(forKey: "photoURL") as? String
         
         ref = snapshot.ref
         
     }
     
     
-    func toAnyObject() -> AnyObject {
+    func toAnyObject() -> Any {
         return [
             "displayName": displayName,
             "email": email,
