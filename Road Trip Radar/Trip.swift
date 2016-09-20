@@ -39,16 +39,16 @@ struct Trip {
     // Initialize from a firebase snapshot
     init (snapshot: FIRDataSnapshot!) {
         key = snapshot.key
-        name = snapshot.value!["name"] as! String
-        addedByUser = snapshot.value!["addedByUser"] as! String
-        latitude = snapshot.value!["latitude"] as! String
-        longitude = snapshot.value!["longitude"] as! String
-        members = snapshot.value!["members"] as! Dictionary
+        name = snapshot.value(forKey: "name") as! String
+        addedByUser = snapshot.value(forKey: "addedByUser") as! String
+        latitude = snapshot.value(forKey: "latitude") as! String
+        longitude = snapshot.value(forKey: "longitude") as! String
+        members = snapshot.value(forKey: "members") as! Dictionary
         ref = snapshot.ref
     }
     
     // Method for converting arbitrary data to any objects
-    func toAnyObject() -> AnyObject {
+    func toAnyObject() -> Any {
         return [
         "name": name,
         "addedByUser": addedByUser,

@@ -84,8 +84,7 @@ class SignInViewController: UIViewController {
         let email = emailTextField.text
         let password = passwordTextField.text
         
-        FIRAuth.auth()?.signIn(withEmail: email!, password: password!) { (user, error) in
-            
+        FIRAuth.auth()?.signIn(withEmail: email!, password: password!, completion: { (user, error) in
             
             // Handle any sign in errors
             if let error = error {
@@ -135,7 +134,7 @@ class SignInViewController: UIViewController {
             //Set the display name
 //            self.setDisplayName(user!)
             self.signedIn(FIRAuth.auth()?.currentUser)
-        }
+        })
         
     }
     
